@@ -39,7 +39,7 @@ Una vez hecho el escaneo, encontramos el puerto 50000, en donde se aloja una ver
 
 ![](Evidencias_Visuales/vulnerableversion)
 
-Mediante investigación OSINT encontramos una vulnerabilidad crítica (CVE-2024-27198) que podemos entender a detalle en el siguiente enlace hxxps[://]rapid7[.]com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/?ref=blog.gitguardian.com 
+Mediante investigación OSINT encontramos una vulnerabilidad crítica (CVE-2024-27198) que podemos entender a detalle en el siguiente enlace hxxps[://]rapid7[.]com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/?ref=blog.gitguardian.com (todos los links se encuentran desactivados, si se desea ingresar a las páginas se deben quitar los corchetes y cambiar el formato de hxxps[://] a  https://)
 
 Esta vulnerabilidad crítica con un base score de 9.8, permite ejecutar código malicioso con el cual podemos crear un nuevo usaurio y contraseña, los cuales serán almacenados y nos permitira acceso completo a la página web, el código lo podemos encontrar en la siguiente dirección: hxxps[://]github[.]com/yoryio/CVE-2024-27198/blob/main/CVE-2024-27198.py
 
