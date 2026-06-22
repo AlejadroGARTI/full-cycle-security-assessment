@@ -74,6 +74,10 @@ Date: Mon, 22 Jun 2026 11:11:28 GMT
 
 Token: eyJ0eXAiOiAiVENWMiJ9.a1JOTGtNSThuSC1uUjVBMS16bE8yVTBfb2lz.NTNiMmRmNGEtYzFlZC00MjVhLTk5YzktOGVjZWRkNWRiOWYz
 
+Una vez dentro del sistema 
+
+
+
 #Opción 2: Metasploit 
 
 ```bash
