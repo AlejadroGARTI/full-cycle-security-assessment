@@ -1,0 +1,1 @@
+Proyecto integral de ciberseguridad que combina actividades de Red Team y Blue Team, incluyendo pruebas de penetración, escalada de privilegios, persistencia, análisis de incidentes en Splunk, reconstrucción de ataques, investigación de exfiltración de datos y propuestas de mitigación.
