@@ -55,7 +55,7 @@ Una vez ejecutado el comando `python CVE-2024-27198.py -t http://10.128.148.36:5
 
 ![](Evidencias_Visuales/newlogin)
 
-Otra forma de lograr acceso es mediante la inyección de un toquen de acceso al usuario admin mediante el comando: 
+Otra forma de lograr acceso es mediante la inyección de un token de acceso al usuario admin mediante el comando: 
 
 ```bash
 ┌──(kali㉿kali)-[~]
@@ -72,11 +72,12 @@ Date: Mon, 22 Jun 2026 11:11:28 GMT
 ```
 ![](Evidencias_Visuales/accesstoken)
 
-Token: eyJ0eXAiOiAiVENWMiJ9.a1JOTGtNSThuSC1uUjVBMS16bE8yVTBfb2lz.NTNiMmRmNGEtYzFlZC00MjVhLTk5YzktOGVjZWRkNWRiOWYz
-
 Una vez dentro del sistema 
 
-
+![](Evidencias_Visuales/buildsteps)
+![](Evidencias_Visuales/pool)
+![](Evidencias_Visuales/agent)
+![](Evidencias_Visuales/runbassic)
 
 #Opción 2: Metasploit 
 
