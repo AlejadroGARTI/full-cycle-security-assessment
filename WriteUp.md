@@ -36,6 +36,7 @@ OS:64%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
 
 
 Una vez hecho el escaneo, encontramos el puerto 50000, en donde se aloja una versión vulnerable de JetBrains TeamCity (Version 2023.11.3 (build 147512)).
+
 ![](Evidencias_Visuales/vulnerableversion)
 
 Mediante investigación OSINT encontramos una vulnerabilidad crítica (CVE-2024-27198) que podemos entender a detalle en el siguiente enlace hxxps[://]www.rapid7[.]com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/?ref=blog.gitguardian.com. 
@@ -44,6 +45,6 @@ Esta vulnerabilidad crítica con un base score de 9.8, permite ejecutar código 
 
 Una vez ejecutado el comando `python CVE-2024-27198.py -t http://10.128.148.36:50000/ -u AGARTI -p root` hemos creado un nuevo usuario (AGARTI) con una nueva contraseña (root). Lo que nos permite acceder a la página web.
 
-![](Evidencias_Visuales/vulnerableversion)
+![](Evidencias_Visuales/newcredentials)
 
 ![](Evidencias_Visuales/newlogin)
