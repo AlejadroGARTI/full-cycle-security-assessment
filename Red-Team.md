@@ -85,6 +85,7 @@ Date: Mon, 22 Jun 2026 11:11:28 GMT
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><token name="AgartiToken" creationTime="2026-06-22T11:11:27.989Z" value="eyJ0eXAiOiAiVENWMiJ9.Uy1sYXM0U0J5T3REb2FNWFlmODJ4WTBJaW53.NjlkZTZiYzUtNmM3Ni00NzM2LTg4ODQtYTg2NmFhODZkNjIx"/> 
 ```
+
 ![](Evidencias_Visuales/accesstoken)
 
 ---
@@ -110,6 +111,7 @@ Para ello debemos instalar el agente en nuestro equipo para que reciba los coman
 ## 3.3 Creación y ejecución de comandos en el proyecto
 
 Una vez instalado el agente, podemos ejecutar la línea de comandos mediante el comando Run
+
 ![](Evidencias_Visuales/runbassic)
 
 ---
