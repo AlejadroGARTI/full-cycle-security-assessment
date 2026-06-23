@@ -33,3 +33,24 @@ Conocer la cantidad exacta de eventos registrados durante el período de mayor a
 ---
 
 # 2. ANÁLISIS PROFUNDO Y LINEA DE TIEMPO
+
+¿Cómo se llama el usuario que se creó durante la explotación?
+
+eviluser
+
+¿Cuándo se creó el usuario?
+
+Jul  4 22:32:37
+
+
+¿Cuál es su punct?
+
+___::__[]:__:_=,_=,_=,_=//,_=//,_=/// 
+
+
+¿Qué tipo de shell se creó?
+
+/bin/bash
+
+
+![](Evidencias_Visuales/BlueTeam/usr)
