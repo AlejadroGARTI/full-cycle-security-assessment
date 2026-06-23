@@ -7,11 +7,11 @@ Se usa la query (*) para buscar todos los resultados, en donde podemos osbsevar 
 
 ¿Cuántos sourcetype de los logs se están analizando?
 
-![](Evidencias_Visuales/BlueTeam/sourcetype)
+![](Evidencias_Visuales/BlueTeam/sourcetype2)
 
 ¿Cuantos eventos generó el sourcetype que más eventos tiene?
 
-![](Evidencias_Visuales/BlueTeam/sourcetype2)
+![](Evidencias_Visuales/BlueTeam/sourcetype)
 
 ¿En que año se generaron más eventos?
 
