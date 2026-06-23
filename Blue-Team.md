@@ -2,13 +2,13 @@
 
 ## 1.1 Host analizado (Brains)
 
-Se usa la query (*) para buscar todos los resultados, en donde podemos osbsevar que el host es brains. Identificar el nombre del host analizado es fundamental para contextualizar la investigación y garantizar que los eventos corresponden al sistema correcto. Esto permite relacionar los registros con un activo específico de la infraestructura y facilita el seguimiento de incidentes, anomalías y actividades sospechosas.
+Se usa la query (*) para buscar todos los resultados, en donde podemos osbsevar que el host es brains; e identificar el nombre del host analizado es fundamental para contextualizar la investigación y garantizar que los eventos corresponden al sistema correcto. Esto permite relacionar los registros con un activo específico de la infraestructura y facilita el seguimiento de incidentes, anomalías y actividades sospechosas.
 
 ![](Evidencias_Visuales/BlueTeam/host)
 
 ## 1.2 Cantidad de sourcetypes analizados (3)
 
-Conocer el número de sourcetypes ayuda a comprender la diversidad de fuentes de datos disponibles para el análisis. Cuantas más fuentes se integren, mayor será la visibilidad sobre la actividad del sistema, permitiendo correlacionar eventos y obtener una visión más completa de la seguridad del entorno.
+Conocer el número de sourcetypes ayuda a comprender la diversidad de fuentes de datos disponibles para el análisis, en donde, cuantas más fuentes se integren, mayor será la visibilidad sobre la actividad del sistema, permitiendo correlacionar eventos y obtener una visión más completa de la seguridad del entorno.
 
 ![](Evidencias_Visuales/BlueTeam/sourcetype2)
 
@@ -40,7 +40,7 @@ La identificación del usuario creado por el atacante es una evidencia clave de 
 
 ## 2.2 Fecha y hora de creación del usuario (Jul 4 22:32:37)
 
-Determinar el momento exacto en que se creó la cuenta maliciosa permite reconstruir la línea temporal del incidente. Este dato ayuda a correlacionar otros eventos registrados en los logs y a comprender la secuencia de acciones realizadas durante la explotación.
+Determinar el momento exacto en que se creó la cuenta maliciosa permite reconstruir la línea temporal del incidente por lo que este dato ayuda a correlacionar otros eventos registrados en los logs y a comprender la secuencia de acciones realizadas durante la explotación.
 
 ## 2.3 Punct del usuario (___::__[]:__:_=,_=,_=,_=//,_=//,_=/// )
 
@@ -74,7 +74,7 @@ La detección de plugins no autorizados es fundamental en entornos como TeamCity
 
 ## 2.9 Source del evento del plugin (/opt/teamcity/TeamCity/logs/teamcity-activities.log)
 
-Conocer la fuente exacta del evento permite validar la evidencia obtenida y localizar registros adicionales relacionados con la actividad maliciosa. También facilita futuras investigaciones forenses y la búsqueda de otros eventos asociados al incidente.
+Conocer la fuente exacta del evento permite validar la evidencia obtenida y localizar registros adicionales relacionados con la actividad maliciosa y también facilita futuras investigaciones forenses y la búsqueda de otros eventos asociados al incidente.
 
 ![](Evidencias_Visuales/BlueTeam/sourceplugin)
 
