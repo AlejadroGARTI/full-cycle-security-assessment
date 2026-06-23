@@ -52,5 +52,34 @@ ___::__[]:__:_=,_=,_=,_=//,_=//,_=///
 
 /bin/bash
 
-
 ![](Evidencias_Visuales/BlueTeam/usr)
+
+¿Cuál es el nombre del paquete malicioso instalado en el servidor?
+
+datacollector
+
+¿Cuál es la versión del paquete?
+
+amd64 1.0
+
+![](Evidencias_Visuales/BlueTeam/paquetemalicioso)
+
+¿A qué hora se emepzó a instalar el paquete?
+
+![](Evidencias_Visuales/BlueTeam/installationuser)
+
+¿Cuál es el nombre del plugin que se instaló?
+
+AyzzbuXY
+
+¿Cuál es el source del evento del plugin?
+
+/opt/teamcity/TeamCity/logs/teamcity-activities.log 
+
+![](Evidencias_Visuales/BlueTeam/sourceplugin)
+
+¿Desde que IP entró el atacante?
+
+¿Cuál es la Public Key por la que accedió el atacante?
+
+![](Evidencias_Visuales/BlueTeam/publickey)
