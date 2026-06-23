@@ -1,7 +1,5 @@
 # Informe de Auditoría de Seguridad
 
----
-
 ## Cliente
 
 - **Empresa Auditora:** AGARTI Technologies
@@ -11,12 +9,7 @@
 - **Auditor Jefe:** Alejandro Gutiérrez Alañón
 - **Clasificación del Documento:** CONFIDENCIAL
 
----
-
 ## Resumen Ejecutivo
-
-
----
 
 ## Alcance y Metodología
 
@@ -30,8 +23,6 @@
 - Inspección manual de configuración de WordPress (ver evidencias visuales)
 - Análisis de cabeceras HTTP 
 
----
-
 ## Top 3 Hallazgos Críticos
 
 ### Hallazgo 1
@@ -44,8 +35,6 @@
 - **Consecuencia e Impacto:** 
 - **Plan de Acción (Recomendación):** 
 
----
-
 ### Hallazgo 2
 
 - **Nombre del Hallazgo:**
@@ -56,8 +45,6 @@
 - **Consecuencia e Impacto:** 
 - **Plan de Acción (Recomendación):** 
 
----
-
 ### Hallazgo 3
 
 - **Nombre del Hallazgo:**
@@ -67,7 +54,6 @@
 - **Causa (Por qué ocurre):** 
 - **Consecuencia e Impacto:** 
 - **Plan de Acción (Recomendación):** 
----
 
 ## Anexos Técnicos
 
