@@ -34,57 +34,57 @@ Conocer la cantidad exacta de eventos registrados durante el período de mayor a
 
 # 2. ANÁLISIS PROFUNDO Y LINEA DE TIEMPO
 
-¿Cómo se llama el usuario que se creó durante la explotación?
+## 2.1 ¿Cómo se llama el usuario que se creó durante la explotación?
 
 eviluser
 
-¿Cuándo se creó el usuario?
+## 2.2 ¿Cuándo se creó el usuario?
 
 Jul  4 22:32:37
 
 
-¿Cuál es su punct?
+## 2.3 ¿Cuál es su punct?
 
 ___::__[]:__:_=,_=,_=,_=//,_=//,_=/// 
 
 
-¿Qué tipo de shell se creó?
+## 2.4 ¿Qué tipo de shell se creó?
 
 /bin/bash
 
 ![](Evidencias_Visuales/BlueTeam/usr)
 
-¿Cuál es el nombre del paquete malicioso instalado en el servidor?
+## 2.5 ¿Cuál es el nombre del paquete malicioso instalado en el servidor?
 
 datacollector
 
-¿Cuál es la versión del paquete?
+## 2.6 ¿Cuál es la versión del paquete?
 
 amd64 1.0
 
 ![](Evidencias_Visuales/BlueTeam/paquetemalicioso)
 
-¿A qué hora se emepzó a instalar el paquete?
+## 2.7 ¿A qué hora se emepzó a instalar el paquete?
 
 22:58:23
 
 ![](Evidencias_Visuales/BlueTeam/installationuser)
 
-¿Cuál es el nombre del plugin que se instaló?
+## 2.8 ¿Cuál es el nombre del plugin que se instaló?
 
 AyzzbuXY
 
-¿Cuál es el source del evento del plugin?
+## 2.9 ¿Cuál es el source del evento del plugin?
 
 /opt/teamcity/TeamCity/logs/teamcity-activities.log 
 
 ![](Evidencias_Visuales/BlueTeam/sourceplugin)
 
-¿Desde que IP entró el atacante?
+## 2.10 ¿Desde que IP entró el atacante?
 
 10.11.75.247
 
-¿Cuál es la Public Key por la que accedió el atacante?
+## 2.11 ¿Cuál es la Public Key por la que accedió el atacante?
 
 ecXxIHdpi9cpIPbjewybKqpDqrM1bw/OlKeuDT6rmzc
 
