@@ -99,7 +99,7 @@ Una vez dentro del sistema, y con un usuario con permisos de adminsitrador, pode
 
 ## 3.2 Configuración del agente de compilación
 
-Pero antes de ejecutar el proyecto, debemos asegurarnos de tener un agente activado ya que en TeamCity, un agente de compilación (build agent) es un programa de software independiente que escucha las órdenes del servidor central de TeamCity y ejecuta las tareas reales de compilación, pruebas y despliegue (CI/CD)
+Antes de ejecutar el proyecto, debemos asegurarnos de tener un agente activado ya que en TeamCity, un agente de compilación (build agent) es un programa de software independiente que escucha las órdenes del servidor central de TeamCity y ejecuta las tareas reales de compilación, pruebas y despliegue (CI/CD)
 
 ![](Evidencias_Visuales/pool)
 
