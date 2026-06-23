@@ -75,8 +75,16 @@ Date: Mon, 22 Jun 2026 11:11:28 GMT
 Una vez dentro del sistema, y con un usuario con permisos de adminsitrador, podemos, dentro de TeamCity, crear un nuevo proyecto con el cual podremos ejecutar líneas de comandos.
 
 ![](Evidencias_Visuales/buildsteps)
+
+Pero antes de ejecutar el proyecto, debemos asegurarnos de tener un agente activado ya que en TeamCity, un agente de compilación (build agent) es un programa de software independiente que escucha las órdenes del servidor central de TeamCity y ejecuta las tareas reales de compilación, pruebas y despliegue (CI/CD)
+
 ![](Evidencias_Visuales/pool)
+
+Para ello debemos instalar el agente en nuestro equipo para que reciba los comandos y sirva como comunicación activa con el servidor de TeamCity en donde constantemente preguntará si hay algún trabajo (build) en la cola esperando ser ejecutado.
+
 ![](Evidencias_Visuales/agent)
+
+Una vez instalado el agente, podemos ejecutar la línea de comandos mediante el comando Run
 ![](Evidencias_Visuales/runbassic)
 
 #Opción 2: Metasploit 
