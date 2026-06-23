@@ -66,7 +66,7 @@ Una vez ejecutado el comando `python CVE-2024-27198.py -t http://10.128.148.36:5
 
 ![](Evidencias_Visuales/newcredentials)
 
-![](Evidencias_Visuales/newlogin)
+![](Evidencias_Visuales/newuser)
 
 ## 2.3 Inyección alternativa de token de acceso
 
