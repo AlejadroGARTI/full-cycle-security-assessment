@@ -72,6 +72,8 @@ Registrar la hora exacta de instalación permite ubicar este evento dentro de la
 
 La detección de plugins no autorizados es fundamental en entornos como TeamCity, ya que estos pueden utilizarse para ejecutar código arbitrario, obtener persistencia o exfiltrar información. Identificar el plugin permite analizar su comportamiento y evaluar su impacto en el sistema, tal como ocurre con el CVE-2024-27198 identificado durante la fase de RED-TEAM, en donde, una vez dentro del sistema se pueden instalar estos plugins de fuentes maliciosas.
 
+![](Evidencias_Visuales/BlueTeam/newplugin)
+
 ## 2.9 Source del evento del plugin (/opt/teamcity/TeamCity/logs/teamcity-activities.log)
 
 Conocer la fuente exacta del evento permite validar la evidencia obtenida y localizar registros adicionales relacionados con la actividad maliciosa y también facilita futuras investigaciones forenses y la búsqueda de otros eventos asociados al incidente.
