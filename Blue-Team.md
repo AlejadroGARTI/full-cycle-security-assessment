@@ -70,7 +70,7 @@ Registrar la hora exacta de instalación permite ubicar este evento dentro de la
 
 ## 2.8 Nombre del plugin instalado (AyzzbuXY)
 
-La detección de plugins no autorizados es fundamental en entornos como TeamCity, ya que estos pueden utilizarse para ejecutar código arbitrario, obtener persistencia o exfiltrar información. Identificar el plugin permite analizar su comportamiento y evaluar su impacto en el sistema, tal como ocurre con el CVE-2024-27198 identificado durante la fase de RED-TEAM, en donde, una vez dentro del sistema se pueden instalar estos plugins de fuentes maliciosas.
+La detección de plugins no autorizados es fundamental en entornos como TeamCity, ya que estos pueden utilizarse para ejecutar código arbitrario, obtener persistencia o exfiltrar información. Identificar el plugin permite analizar su comportamiento y evaluar su impacto en el sistema, tal como ocurre con el CVE-2024-27198 identificado durante la fase de RED-TEAM, en donde, una vez dentro del sistema se pueden instalar estos plugins de fuentes maliciosas usando un .zip.
 
 ![](Evidencias_Visuales/BlueTeam/newplugin)
 
