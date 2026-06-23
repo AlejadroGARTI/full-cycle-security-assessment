@@ -66,6 +66,8 @@ amd64 1.0
 
 ¿A qué hora se emepzó a instalar el paquete?
 
+22:58:23
+
 ![](Evidencias_Visuales/BlueTeam/installationuser)
 
 ¿Cuál es el nombre del plugin que se instaló?
