@@ -60,4 +60,17 @@
 - [Informe de Pentesting](Red-Team.md)
 - [Análisis en Splunk](Blue-Team.md)
 
+| Ref.   | Activo              | C | I | A | Au | T |
+|--------|---------------------|---|---|---|----|---|
+| INF-1  | Datos de negocio    | 10 | 9 | 8 | 6  | 6 |
+| SW-1   | Aplicación Web      | 3 | 8 | 7 | 5  | 4 |
+| SW-2   | Middleware          | 4 | 7 | 7 | 4  | 4 |
+| COM-1  | Comunicaciones      | 10 | 9 | 6 | 8  | 5 |
+| HW-1   | Servidor Ubuntu     | 4 | 7 | 7 | 4  | 5 |
+
+HD - Linux
+S2 - OpenSSH (middleware) 
+S2 - Apache (middleware) - Web en mantenimiento por el puerto 80
+S2 - TomCat (middleware) - Web TeamCity
+
 
