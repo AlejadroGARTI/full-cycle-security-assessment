@@ -80,6 +80,10 @@ AyzzbuXY
 
 ¿Desde que IP entró el atacante?
 
+10.11.75.247
+
 ¿Cuál es la Public Key por la que accedió el atacante?
+
+ecXxIHdpi9cpIPbjewybKqpDqrM1bw/OlKeuDT6rmzc
 
 ![](Evidencias_Visuales/BlueTeam/publickey)
