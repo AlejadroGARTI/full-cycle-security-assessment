@@ -72,5 +72,6 @@ HD - Linux
 S2 - OpenSSH (middleware) 
 S2 - Apache (middleware) - Web en mantenimiento por el puerto 80
 S2 - TomCat (middleware) - Web TeamCity
+Comunicaciones  tambien cada una diferente ver diagrama 
 
 
