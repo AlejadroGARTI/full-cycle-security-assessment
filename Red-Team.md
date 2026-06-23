@@ -1,6 +1,6 @@
 # 1. ANÁLISIS INICIAL DE PUERTOS Y SERVICIOS
 
-## 1.1. Escaneo Nmap y servicios detectados
+## 1.1 Escaneo Nmap y servicios detectados
 
 ```bash
 Host is up (0.045s latency).
@@ -40,7 +40,7 @@ OS:64%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
 
 Una vez hecho el escaneo, encontramos el puerto 50000, en donde se aloja una versión vulnerable de JetBrains TeamCity (Version 2023.11.3 (build 147512)).
 
-## 1.2. Identificación de la versión vulnerable de TeamCity
+## 1.2 Identificación de la versión vulnerable de TeamCity
 
 ![](Evidencias_Visuales/vulnerableversion)
 
