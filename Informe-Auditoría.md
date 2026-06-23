@@ -27,9 +27,9 @@
 
 ### Hallazgo 1
 
-- **Nombre del Hallazgo:**
-- **Nivel de Riesgo:** 
-- **Condición (Lo que es):**
+- **Nombre del Hallazgo:** Versión de TeamCity obsoleta y vulnerable
+- **Nivel de Riesgo:** Crítico
+- **Condición (Lo que es):** (2023.11.3 (build 147512)).
 - **Criterio (Lo que debería ser):**
 - **Causa (Por qué ocurre):** 
 - **Consecuencia e Impacto:** 
@@ -37,9 +37,9 @@
 
 ### Hallazgo 2
 
-- **Nombre del Hallazgo:**
+- **Nombre del Hallazgo:** Versión de SSH obsoleta
 - **Nivel de Riesgo:** 
-- **Condición (Lo que es):**
+- **Condición (Lo que es):** 8.2p1
 - **Criterio (Lo que debería ser):**
 - **Causa (Por qué ocurre):** 
 - **Consecuencia e Impacto:** 
@@ -47,9 +47,9 @@
 
 ### Hallazgo 3
 
-- **Nombre del Hallazgo:**
+- **Nombre del Hallazgo:** Versión de Apache obsoleta
 - **Nivel de Riesgo:** 
-- **Condición (Lo que es):**
+- **Condición (Lo que es):** Apache/2.4.41 
 - **Criterio (Lo que debería ser):**
 - **Causa (Por qué ocurre):** 
 - **Consecuencia e Impacto:** 
