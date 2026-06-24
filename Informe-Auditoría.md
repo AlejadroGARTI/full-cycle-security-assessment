@@ -14,6 +14,11 @@
 ---
 
 ## Resumen Ejecutivo
+Tras realizar la auditoría de seguridad basada en pruebas de penetración (Red Team) y análisis de logs (Blue Team), se concluye que la postura de seguridad de la infraestructura actual es crítica, ya que se han identificado y evaluado un total de 4 hallazgos, de los cuales 1 presenta un nivel de riesgo crítico y 3 presentan un nivel de riesgo muy alto por lo que la organización está expuesta a ciberataques con una probabilidad muy elevada en el corto plazo, en donde estos problemas pueden afectar gravemente los activos de la empresa.
+
+El principal problema reside en el uso de software obsoleto y sin parches de seguridad, lo que convierte los sistemas críticos de la empresa en un blanco fácil para atacantes. Durante la fase de Red Team, se logró explotar con éxito la vulnerabilidad CVE-2024-27198 en TeamCity 2023.11.3, una vulnerabilidad crítica con un base score de 9.8, que permitió crear un usuario administrador no autorizado (AGARTI), inyectar tokens de acceso y obtener una shell inversa en el servidor, adquiriendo control completo sobre toda la infraestructura. Además, se identificaron versiones obsoletas de OpenSSH 8.2p1, Apache 2.4.41 y Ubuntu 20.04.6 LTS, que presentan vulnerabilidades conocidas y sin parchear.
+
+En cuanto al impacto directo en el negocio, si la organización no soluciona estos riesgos de forma inmediata, las consecuencias podrían significar la pérdida completa del negocio, ya que a nivel financiero, un ataque exitoso podría paralizar la operativa durante días, con la consiguiente pérdida de ingresos, costes de recuperación forense y posibles multas regulatorias. La evidencia de también confirma que ya se han producido intrusiones reales, con la creación del usuario malicioso eviluser (el 4 de julio a las 22:32:37), la instalación del paquete malicioso datacollector (versión amd64 1.0) y la implantación del plugin no autorizado AyzzbuXY, así como el uso de una clave pública comprometida (ecXxIHdpi9cpIPbjewybKqpDqrM1bw/OlKeuDT6rmzc) procedente de la IP atacante 10.11.75.247, evidenciando que el sistema ya ha sido comprometido activamente.
 
 ## Alcance y Metodología
 
@@ -38,7 +43,7 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 - **Condición:** Se detectó la versión 2023.11.3 (build 147512) en el entorno de producción.
 - **Criterio:** La versión instalada debe ser la más reciente estable que incluya parches de seguridad y correcciones de fallos críticos.
 - **Causa:** Falta de un proceso formal de actualización y mantenimiento continuo del software, lo que ha derivado en un desfase significativo respecto a las versiones seguras disponibles.
-- **Consecuencia e Impacto:** Exposición a vulnerabilidades públicas documentadas que permiten a un atacante ejecutar código remoto, escalar privilegios y tomar el control completo del servidor, comprometiendo la confidencialidad, integridad y disponibilidad de los activos asociados.
+- **Consecuencia e Impacto:** Exposición a vulnerabilidades públicas documentadas (CVE-2024-27198) y (CVE-2024-27199) que permiten a un atacante ejecutar código remoto, escalar privilegios y tomar el control completo del servidor, comprometiendo la confidencialidad, integridad y disponibilidad de los activos asociados.
 - **Plan de Acción:** Actualizar de manera inmediata a la versión 2026.1 o superior, previa validación en un entorno de pruebas, y establecer una política de actualizaciones periódicas programadas.
 
 ### Hallazgo 2
