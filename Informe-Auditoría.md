@@ -114,14 +114,17 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 ##### 🟢 Valor propio
 | Ref.   | Activo              | C | I | A | Au | T |
 |--------|---------------------|---|---|---|----|---|
-| SO-1   | Servidor Ubuntu     | 4 | 7 | 7 | 4  | 5 |
-| COM-1  | Comunicaciones      | 10 | 9 | 6 | 8  | 5 |
-| COM-2  | Comunicaciones      | 10 | 9 | 6 | 8  | 5 |
+| WB-1  | App Web (TeamCity    | 3 | 8 | 7 | 5  | 4 |
+| WB-2  | App Web (En mantenim.  | 3 | 8 | 7 | 5  | 4 |
 | MD-1  | Datos de negocio    | 10 | 9 | 8 | 6  | 6 |
 | MD-2  | Datos de negocio    | 10 | 9 | 8 | 6  | 6 |
 | MD-3  | Datos de negocio    | 10 | 9 | 8 | 6  | 6 |
-| WB-1  | Aplicación Web      | 3 | 8 | 7 | 5  | 4 |
-| WB-1  | Aplicación Web      | 3 | 8 | 7 | 5  | 4 |
+| COM-1  | Comunicaciones      | 10 | 9 | 6 | 8  | 5 |
+| COM-2  | Comunicaciones      | 10 | 9 | 6 | 8  | 5 |
+| SO-1   | Servidor Ubuntu     | 4 | 7 | 7 | 4  | 5 |
+
+
+
 
 
 
