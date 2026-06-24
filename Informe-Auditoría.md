@@ -20,66 +20,51 @@
 - Controles del Esquema Nacional de Seguridad (ENS)
 
 ### Herramientas utilizadas
-- Inspección manual de configuración de WordPress (ver evidencias visuales)
-- Análisis de cabeceras HTTP 
+- Inspección manual de la configuración de TeamCity
+- Splunk SIEM
+- Metasploit
 
 ## Top 3 Hallazgos Críticos
 
 ### Hallazgo 1
 
-- **Nombre del Hallazgo:** Versión de TeamCity obsoleta y vulnerable
+- **Nombre del Hallazgo:** Versión de TeamCity obsoleta y con vulnerabilidades críticas conocidas
 - **Nivel de Riesgo:** Crítico
-- **Condición (Lo que es):** (2023.11.3 (build 147512)).
-- **Criterio (Lo que debería ser):**
-- **Causa (Por qué ocurre):** 
-- **Consecuencia e Impacto:** 
-- **Plan de Acción (Recomendación):** 
+- **Condición:** Se detectó la versión 2023.11.3 (build 147512) en el entorno de producción.
+- **Criterio:** La versión instalada debe ser la más reciente estable que incluya parches de seguridad y correcciones de fallos críticos.
+- **Causa:** Falta de un proceso formal de actualización y mantenimiento continuo del software, lo que ha derivado en un desfase significativo respecto a las versiones seguras disponibles.
+- **Consecuencia e Impacto:** Exposición a vulnerabilidades públicas documentadas que permiten a un atacante ejecutar código remoto, escalar privilegios y tomar el control completo del servidor, comprometiendo la confidencialidad, integridad y disponibilidad de los activos asociados.
+- **Plan de Acción:** Actualizar de manera inmediata a la versión 2026.1 o superior, previa validación en un entorno de pruebas, y establecer una política de actualizaciones periódicas programadas.
 
 ### Hallazgo 2
 
-- **Nombre del Hallazgo:** Versión de SSH obsoleta
-- **Nivel de Riesgo:** 
-- **Condición (Lo que es):** 8.2p1
-- **Criterio (Lo que debería ser):**
-- **Causa (Por qué ocurre):** 
-- **Consecuencia e Impacto:** 
-- **Plan de Acción (Recomendación):** 
+- **Nombre del Hallazgo:** Versión de OpenSSH obsoleta con vulnerabilidades sin parchear
+- **Nivel de Riesgo:** Muy Alto
+- **Condición:** Se encuentra instalada la versión 8.2p1 del servicio SSH.
+- **Criterio:** La versión instalada debe ser la más reciente estable que incluya parches de seguridad y correcciones de fallos críticos.
+- **Causa:** Ausencia de un ciclo de actualización planificado para componentes críticos de la infraestructura, y posible dependencia de versiones antiguas por compatibilidad no evaluada.
+- **Consecuencia e Impacto:** Riesgo de explotación de fallos de seguridad documentados en versiones anteriores, lo que podría permitir ataques de denegación de servicio, ejecución de comandos o acceso no autorizado al sistema.
+- **Plan de Acción:** Actualizar OpenSSH a la versión 10.3 o superior, asegurando la compatibilidad con los sistemas dependientes, y validar la configuración post-actualización para mantener los estándares de seguridad.
 
 ### Hallazgo 3
 
 - **Nombre del Hallazgo:** Versión de Apache obsoleta
-- **Nivel de Riesgo:** 
-- **Condición (Lo que es):** Apache/2.4.41 
-- **Criterio (Lo que debería ser):**
-- **Causa (Por qué ocurre):** 
-- **Consecuencia e Impacto:** 
-- **Plan de Acción (Recomendación):**
+- **Nivel de Riesgo:** Muy Alto
+- **Condición:** Se identificó la versión Apache/2.4.41 en el servidor web.
+- **Criterio:** La versión instalada debe ser la más reciente estable que incluya parches de seguridad y correcciones de fallos críticos.
+- **Causa:** Falta de monitoreo activo de las actualizaciones de seguridad del servidor web y posible ausencia de un gestor de paquetes actualizado en el sistema.
+- **Consecuencia e Impacto:** Exposición a múltiples vulnerabilidades conocidas (como desbordamientos de búfer, divulgación de información y ejecución remota), que podrían comprometer la integridad del servidor y la información transmitida.
+- **Plan de Acción:** Actualizar Apache HTTP Server a la versión 2.4.68 o a la más reciente estable, realizando pruebas de regresión en un entorno controlado antes del despliegue en producción.
 
 ### Hallazgo 4
 
-- **Nombre del Hallazgo:** Versión de Linux obsoleta
-- **Nivel de Riesgo:** 
-- **Condición (Lo que es):** Apache/2.4.41 
-- **Criterio (Lo que debería ser):**
-- **Causa (Por qué ocurre):** 
-- **Consecuencia e Impacto:** 
-- **Plan de Acción (Recomendación):** 
-
-
-cat /etc/os-release
-NAME="Ubuntu"
-VERSION="20.04.6 LTS (Focal Fossa)"
-ID=ubuntu
-ID_LIKE=debian
-PRETTY_NAME="Ubuntu 20.04.6 LTS"
-VERSION_ID="20.04"
-HOME_URL="https://www.ubuntu.com/"
-SUPPORT_URL="https://help.ubuntu.com/"
-BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
-PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
-VERSION_CODENAME=focal
-UBUNTU_CODENAME=focal
-
+- **Nombre del Hallazgo:** Versión del sistema operativo Linux desactualizada
+- **Nivel de Riesgo:** Muy Alto
+- **Condición:** El sistema opera con la distribución Ubuntu 20.04.6 LTS (Focal Fossa).
+- **Criterio:** La versión instalada debe ser la más reciente estable que incluya parches de seguridad y correcciones de fallos críticos.
+- **Causa:** Ciclo de actualización del sistema operativo no alineado con el calendario de lanzamientos LTS de Ubuntu, posiblemente por falta de recursos o planificación.
+- **Consecuencia e Impacto:** Fin del soporte estándar y reducción en la disponibilidad de actualizaciones de seguridad críticas, lo que incrementa la superficie de ataque y dificulta el cumplimiento normativo.
+- **Plan de Acción (Recomendación):** Planificar y ejecutar la migración a Ubuntu 26.04 LTS, incluyendo un análisis de compatibilidad de aplicaciones, respaldo completo de datos y un plan de contingencia ante posibles incidencias durante la actualización
 
 ## Anexos Técnicos
 
