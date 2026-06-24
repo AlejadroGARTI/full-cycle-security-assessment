@@ -95,7 +95,8 @@ UBUNTU_CODENAME=focal
 | SW-2   | Middleware          | 4 | 7 | 7 | 4  | 4 |
 | COM-1  | Comunicaciones      | 10 | 9 | 6 | 8  | 5 |
 | HW-1   | Servidor Ubuntu     | 4 | 7 | 7 | 4  | 5 |
-   
+
+```bash
                 ┌────────┐     ┌────────┐
                 │ WEB 1  │     │ WEB 2  │
                 │(Apache)│     │(Tomcat)│
@@ -117,6 +118,8 @@ UBUNTU_CODENAME=focal
            ┌────▼────┐
            │ LINUX   │
            └─────────┘
+```
+
 HD - Linux
 S2 - OpenSSH (middleware) 
 S2 - Apache (middleware) - Web en mantenimiento por el puerto 80
