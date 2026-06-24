@@ -14,6 +14,7 @@
 ## Alcance y Metodología
 
 ### Sistemas evaluados
+Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (Focal Fossa), el servicio de integración continua TeamCity 2023.11.3 (build 147512), el servidor web Apache/2.4.41 y el servicio de administración remota OpenSSH 8.2p1. También se han revisado las configuraciones de seguridad, los parches aplicados, las comunicaciones internas y externas del entorno, así como los mecanismos de autenticación y control de acceso implementados en la infraestructura evaluada.
 
 ### Marcos normativos aplicados
 - Metodología MAGERIT v3
@@ -39,7 +40,7 @@
 ### Hallazgo 2
 
 - **Nombre del Hallazgo:** Versión de OpenSSH obsoleta con vulnerabilidades sin parchear
-- **Nivel de Riesgo:** Muy Alto
+- **Nivel de Riesgo:** Crítico
 - **Condición:** Se encuentra instalada la versión 8.2p1 del servicio SSH.
 - **Criterio:** La versión instalada debe ser la más reciente estable que incluya parches de seguridad y correcciones de fallos críticos.
 - **Causa:** Ausencia de un ciclo de actualización planificado para componentes críticos de la infraestructura, y posible dependencia de versiones antiguas por compatibilidad no evaluada.
@@ -88,9 +89,9 @@
                                                 └───┬────┘     └───┬────┘ 
                                                     │              │
                                                 ┌───▼────┐     ┌───▼────┐
-                                       ((S2-2)) │ APACHE │     │ TOMCAT │ ((S2-3))  
+                                       ((MD-2)) │ APACHE │     │ TOMCAT │ ((MD-3))  
                                 ┌─────────┐     └───┬────┘     └───┬────┘ 
-                       ((S2-1)) │ OpenSSH │         │ pt. 80       │ pt. 50000
+                       ((MD-1)) │ OpenSSH │         │ pt. 80       │ pt. 50000
                                 └────┬────┘         └──────┬───────┘
                                      │ pt. 22              │ 
                                 ┌────▼────┐           ┌────▼────┐               
@@ -100,15 +101,9 @@
                                      └──────────┼──────────┘
                                                 │
                                         ┌───────▼───────┐
-                                        │ Ubuntu Server │ ((HW-1)) 
+                                        │ Ubuntu Server │ ((SO-1)) 
                                         └───────────────┘
 ```
-
-HD - Linux
-S2 - OpenSSH (middleware) 
-S2 - Apache (middleware) - Web en mantenimiento por el puerto 80
-S2 - TomCat (middleware) - Web TeamCity
-Comunicaciones  tambien cada una diferente ver diagrama 
 
 ##### 🟢 Valor acumulado
 
