@@ -53,6 +53,16 @@
 - **Criterio (Lo que debería ser):**
 - **Causa (Por qué ocurre):** 
 - **Consecuencia e Impacto:** 
+- **Plan de Acción (Recomendación):**
+
+### Hallazgo 4
+
+- **Nombre del Hallazgo:** Versión de Linux obsoleta
+- **Nivel de Riesgo:** 
+- **Condición (Lo que es):** Apache/2.4.41 
+- **Criterio (Lo que debería ser):**
+- **Causa (Por qué ocurre):** 
+- **Consecuencia e Impacto:** 
 - **Plan de Acción (Recomendación):** 
 
 
@@ -86,6 +96,37 @@ UBUNTU_CODENAME=focal
 | COM-1  | Comunicaciones      | 10 | 9 | 6 | 8  | 5 |
 | HW-1   | Servidor Ubuntu     | 4 | 7 | 7 | 4  | 5 |
 
+
+                    +------------------+
+                    |                  |
+                    |     LINUX        |
+                    |                  |
+                    +--------+---------+
+                             |
+              +--------------+--------------+
+              |                             |
+              |                             |
+    +---------v---------+        +---------v---------+
+    |                   |        |                   |
+    |       SSH         |        |       HTTP        |
+    |                   |        |                   |
+    +---------+---------+        +---------+---------+
+              |                             |
+              |                    +--------+--------+
+              |                    |        |        |
+    +---------v---------+  +-------v----+ +-v--------+
+    |                   |  |            | |          |
+    |    OpenSSH        |  |  APACHE   | | TOMCAT   |
+    |                   |  |            | |          |
+    +-------------------+  +-------+----+ +----+-----+
+                                  |             |
+                                  |             |
+                           +------v----+  +-----v-----+
+                           |           |  |           |
+                           |  WEB 1    |  |  WEB 2    |
+                           |  (Apache) |  | (Tomcat)  |
+                           |           |  |           |
+                           +-----------+  +-----------+
 HD - Linux
 S2 - OpenSSH (middleware) 
 S2 - Apache (middleware) - Web en mantenimiento por el puerto 80
