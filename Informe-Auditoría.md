@@ -34,7 +34,7 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 - Splunk SIEM
 - Metasploit
 
-## Top 3 Hallazgos Críticos
+## Hallazgos Críticos
 
 ### Hallazgo 1
 
