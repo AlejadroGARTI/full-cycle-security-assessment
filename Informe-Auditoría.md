@@ -9,6 +9,9 @@
 - **Auditor Jefe:** Alejandro Gutiérrez Alañón
 - **Clasificación del Documento:** CONFIDENCIAL
 
+![](Evidencias_Visuales/D.D)
+
+
 ## Resumen Ejecutivo
 
 ## Alcance y Metodología
