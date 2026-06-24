@@ -112,17 +112,18 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 
 #### 🔴 Identificación y Valoración de Activos
 ##### 🟢 Valor propio
+###### MAGERIT
 | Ref.   | Activo              | C | I | A | Au | T |
 |--------|---------------------|---|---|---|----|---|
-| WB-1  | App Web (TeamCity)    | 3 | 8 | 7 | 5  | 4 |
-| WB-2  | App Web (Mantenimiento)  | 3 | 8 | 7 | 5  | 4 |
-| MD-1  | Middleware (Open SSH)    | 10 | 9 | 8 | 6  | 6 |
-| MD-2  | Middleware (Apache httpd)   | 10 | 9 | 8 | 6  | 6 |
-| MD-3  | Middleware (Apache tomcat)   | 10 | 9 | 8 | 6  | 6 |
-| COM-1  | Comunicaciones (SSH)     | 10 | 9 | 6 | 8  | 5 |
-| COM-2  | Comunicaciones (HTTP)     | 10 | 9 | 6 | 8  | 5 |
-| SO-1   | Servidor Ubuntu     | 4 | 7 | 7 | 4  | 5 |
-
+| WB-1  | App Web (TeamCity)    | 10 | 10 | 6 | 10  | 4 |
+| WB-2  | App Web (Mantenimiento)  | 1 | 1 | 1 | 1  | 1 |
+| MD-1  | Middleware (Open SSH)    | 10 | 10 | 7 | 10  | 6 |
+| MD-2  | Middleware (Apache httpd)   | 4 | 2 | 1 | 2  | 3 |
+| MD-3  | Middleware (Apache tomcat)   | 10 | 8 | 6 | 10  | 4 |
+| COM-1  | Comunicaciones (SSH)     | 10 | 9 | 8 | 10  | 7 |
+| COM-2  | Comunicaciones (HTTP)     | 10 | 9 | 6 | 10  | 5 |
+| SO-1   | Servidor Ubuntu     | 8 | 9 | 9 | 8  | 7 |
+###### ENS
 
 
 
