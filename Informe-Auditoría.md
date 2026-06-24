@@ -18,7 +18,7 @@ Tras realizar la auditoría de seguridad basada en pruebas de penetración (Red 
 
 El principal problema reside en el uso de software obsoleto y sin parches de seguridad, lo que convierte los sistemas críticos de la empresa en un blanco fácil para atacantes. Durante la fase de pentesting, se logró explotar con éxito la vulnerabilidad CVE-2024-27198 en TeamCity 2023.11.3, una vulnerabilidad crítica con un base score de 9.8, que permitió crear un usuario administrador no autorizado (AGARTI), inyectar tokens de acceso y obtener una shell inversa en el servidor, adquiriendo control completo sobre toda la infraestructura. Además, se identificaron versiones obsoletas de OpenSSH 8.2p1, Apache 2.4.41 y Ubuntu 20.04.6 LTS, que presentan vulnerabilidades conocidas y sin parchear.
 
-En cuanto al impacto directo en el negocio, si la organización no soluciona estos riesgos de forma inmediata, las consecuencias podrían significar la pérdida completa del negocio, ya que a nivel financiero, un ataque exitoso podría paralizar la operativa durante días, con la consiguiente pérdida de ingresos, costes de recuperación forense y posibles multas regulatorias. La evidencia de también confirma que ya se han producido intrusiones reales, con la creación del usuario malicioso eviluser (el 4 de julio a las 22:32:37), la instalación del paquete malicioso datacollector (versión amd64 1.0) y la implantación del plugin no autorizado AyzzbuXY, así como el uso de una clave pública comprometida (ecXxIHdpi9cpIPbjewybKqpDqrM1bw/OlKeuDT6rmzc) procedente de la IP atacante 10.11.75.247, evidenciando que el sistema ya ha sido comprometido activamente.
+En cuanto al impacto directo en el negocio, si la organización no soluciona estos riesgos de forma inmediata, las consecuencias podrían significar la pérdida completa del negocio, ya que a nivel financiero, un ataque exitoso podría paralizar la operativa durante días, con la consiguiente pérdida de ingresos, costes de recuperación forense y posibles multas regulatorias. La evidencia mostrada en el SIEM también confirma que ya se han producido intrusiones reales, con la creación del usuario malicioso eviluser (el 4 de julio a las 22:32:37), la instalación del paquete malicioso datacollector (versión amd64 1.0) y la implantación del plugin no autorizado AyzzbuXY, así como el uso de una clave pública comprometida (ecXxIHdpi9cpIPbjewybKqpDqrM1bw/OlKeuDT6rmzc) procedente de la IP atacante 10.11.75.247, evidenciando que el sistema ya ha sido comprometido activamente.
 
 ## Alcance y Metodología
 
@@ -78,18 +78,12 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 
 ## Anexos Técnicos
 
+### Recopilación de evidencias
+
 - [Informe de Pentesting](Red-Team.md)
 - [Análisis en Splunk](Blue-Team.md)
 
-#### 🔴 Identificación y Valoración de Activos
-##### 🟢 Valor propio
-| Ref.   | Activo              | C | I | A | Au | T |
-|--------|---------------------|---|---|---|----|---|
-| INF-1  | Datos de negocio    | 10 | 9 | 8 | 6  | 6 |
-| SW-1   | Aplicación Web      | 3 | 8 | 7 | 5  | 4 |
-| SW-2   | Middleware          | 4 | 7 | 7 | 4  | 4 |
-| COM-1  | Comunicaciones      | 10 | 9 | 6 | 8  | 5 |
-| HW-1   | Servidor Ubuntu     | 4 | 7 | 7 | 4  | 5 |
+### Diagrama de la arquitectura del sistema
 
 ```bash
                                                 ┌────────┐     ┌────────┐
@@ -113,6 +107,19 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
                                         │ Ubuntu Server │ ((SO-1)) 
                                         └───────────────┘
 ```
+
+### Tablas de Auditoría
+
+#### 🔴 Identificación y Valoración de Activos
+##### 🟢 Valor propio
+| Ref.   | Activo              | C | I | A | Au | T |
+|--------|---------------------|---|---|---|----|---|
+| INF-1  | Datos de negocio    | 10 | 9 | 8 | 6  | 6 |
+| SW-1   | Aplicación Web      | 3 | 8 | 7 | 5  | 4 |
+| SW-2   | Middleware          | 4 | 7 | 7 | 4  | 4 |
+| COM-1  | Comunicaciones      | 10 | 9 | 6 | 8  | 5 |
+| HW-1   | Servidor Ubuntu     | 4 | 7 | 7 | 4  | 5 |
+
 
 ##### 🟢 Valor acumulado
 
