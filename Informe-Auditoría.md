@@ -239,8 +239,11 @@ En donde los códigos de las amenazas están dados por:
 | AM-03 | Faltan módulos recomendados     | Instalar plugins o módulos de seguridad recomendados                      | 100%         | 0          | Bajo                    |
 
 
+---
+---
+# Tablas externas
 
-## Medidas de Seguridad
+## Selección de medidas de seguridad del ENS
 
 | Medidas de Seguridad | Por categoría o dimensión(es) | BAJO | MEDIO | ALTO |
 | :--- | :--- | :--- | :--- | :--- |
@@ -336,9 +339,10 @@ En donde los códigos de las amenazas están dados por:
 | **mp.s.3** | Protección de la navegación web | aplica | aplica | + R1 |
 | **mp.s.4** | Protección frente a denegación de servicio | n.a. | aplica | + R1 |
 
-https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191
+Para obtener más información se puede consultar: https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191
 
-Criticidad de los recursos
+## Criticidad de los recursos
+
 | Efectos negativos producidos | Muy baja | Baja | Media | Alta | Muy Alta |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Muy Bajo** | MUY BAJO | MUY BAJO | MUY BAJO | BAJO | BAJO |
