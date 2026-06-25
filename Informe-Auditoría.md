@@ -341,9 +341,9 @@ En donde los códigos de las amenazas están dados por:
 
 Para obtener más información se puede consultar: https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191
 
-## Criticidad de los recursos
+## Matriz de Riesgo
 
-| Efectos negativos producidos | Muy baja | Baja | Media | Alta | Muy Alta |
+| Efectos negativos producidos | Criticidad de los recursos: Muy baja | Criticidad: Baja | Criticidad:Media | Criticidad:Alta | Criticidad:Muy Alta |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Muy Bajo** | MUY BAJO | MUY BAJO | MUY BAJO | BAJO | BAJO |
 | **Bajo** | MUY BAJO | BAJO | BAJO | MEDIO | MEDIO |
