@@ -336,6 +336,7 @@ En donde los códigos de las amenazas están dados por:
 | **mp.s.3** | Protección de la navegación web | aplica | aplica | + R1 |
 | **mp.s.4** | Protección frente a denegación de servicio | n.a. | aplica | + R1 |
 
+https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191
 
 Criticidad de los recursos
 | Efectos negativos producidos | Muy baja | Baja | Media | Alta | Muy Alta |
