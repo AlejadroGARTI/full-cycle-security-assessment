@@ -188,10 +188,10 @@ En donde los códigos de las amenazas están dados por:
 #### 🔴 Evaluación de Riesgos
 ##### 🟢 Cálculo de Probabilidad
 ```bash
-| | Muy baja | Baja | Media | Alta | Crítica |
+| Muy baja | Baja | Media | Alta | Crítica |
 |---|---|---|---|---|---|
-| **Frecuencia** | 0 - 1,9 | 2 - 3,9 | 4 - 5,9 | 6 - 7,9 | 8 - 10 |
-| **Estadística** | > 1 año | Cada año | Cada mes | Cada semana | Cada día |
+| Frecuencia | 0 - 1,9 | 2 - 3,9 | 4 - 5,9 | 6 - 7,9 | 8 - 10 |
+| Estadística | > 1 año | Cada año | Cada mes | Cada semana | Cada día |
 ```
 | Ref.  | Atracción | Facilidad | Accesibilidad | Probabilidad | P. Cualitativa |
 |--------|-----------|------------|---------------|--------------|----------------|
