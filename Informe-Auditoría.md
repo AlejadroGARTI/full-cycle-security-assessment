@@ -175,9 +175,6 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 
 En donde los códigos de las amenazas están dados por: 
 - **[S.21] Vulnerabilidades de los programas:** Uso de software obsoleto, sin actualizar o que ya no recibe parches de seguridad de sus creadores.
-- **[S.22] Errores de configuración / Faltas funcionales:** Ausencia de componentes, librerías o módulos necesarios para que el sistema funcione correctamente y de forma segura.
-- **[S.24] Deficiencias de mantenimiento:** Dejar instalados componentes, plugins o temas que no se usan. Esto aumenta la "superficie de ataque".
-- **[A.11] Degradación del servicio:** Fallos o configuraciones pobres que hacen que el sistema vaya muy lento o pueda colapsar si recibe muchas visitas de golpe
 - **[F.14] Fallo en los controles de acceso perimetral:** Ausencia o mala configuración del firewall que permite el acceso no autorizado desde redes externas y control de las conexiones desde las redes internas al exterior.
 
 #### 🔴 Evaluación de Riesgos
