@@ -175,7 +175,7 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 | AM-01 | Versión de TeamCity obsoleta y con vulnerabilidades críticas conocidas (2023.11.3) | WB-1 (App Web, TeamCity) | S.21 | La versión 2023.11.3 de TeamCity presenta vulnerabilidades críticas documentadas (CVE-2024-27198 y CVE-2024-27199) que permiten ejecución remota de código sin autenticación, con un base score de 9.8. Durante el pentesting se explotó con éxito esta vulnerabilidad, creando un usuario administrador no autorizado (AGARTI) y obteniendo una shell inversa. La falta de un proceso formal de actualización ha dejado el software obsoleto y expuesto a exploits públicos disponibles en Metasploit. |
 | AM-02 | Versión de OpenSSH obsoleta con vulnerabilidades sin parchear | MD-1 (Middleware, OpenSSH) | S.21 | OpenSSH 8.2p1 es una versión anterior a la 8.8, que incluye parches para vulnerabilidades críticas como CVE-2021-41617 (fallo en la validación de certificados) y otros problemas de seguridad documentados. Al no estar actualizado, el servicio de administración remota queda expuesto a ataques de denegación de servicio, ejecución de comandos y acceso no autorizado. La ausencia de un ciclo de actualización planificado para componentes críticos agrava el riesgo. |
 | AM-03 | Versión de Apache obsoleta | MD-2 (Middleware, Apache httpd) | S.21 | Apache 2.4.41 es una versión que ha quedado obsoleta frente a las versiones estables actuales (2.4.68+). Presenta vulnerabilidades conocidas como desbordamientos de búfer, divulgación de información y posibles ejecuciones remotas de código (CVE-2021-40438, CVE-2021-44224, entre otras). La falta de monitoreo activo de actualizaciones de seguridad y la posible ausencia de un gestor de paquetes actualizado han permitido que el servidor web permanezca en una versión insegura. |
-| AM-04 | Versión del sistema operativo Linux desactualizada | SO-1 (Servidor Ubuntu) | S.21 | Ubuntu 20.04.6 LTS (Focal Fossa) está cerca del fin de su soporte estándar (abril 2025), lo que implica una reducción en la disponibilidad de actualizaciones de seguridad críticas para el kernel y los paquetes del sistema. Esto incrementa la superficie de ataque del servidor, dejándolo expuesto a vulnerabilidades del sistema operativo que ya han sido parcheadas en versiones posteriores. El ciclo de actualización del SO no está alineado con el calendario de lanzamientos LTS de Ubuntu. |
+| AM-04 | Versión del sistema operativo Linux desactualizada | SO-1 (Servidor Ubuntu) | S.21 | Ubuntu 20.04.6 LTS (Focal Fossa) ya no presenta actualizaciones de seguridad, lo que implica una reducción en la disponibilidad de actualizaciones de seguridad críticas para el kernel y los paquetes del sistema. Esto incrementa la superficie de ataque del servidor, dejándolo expuesto a vulnerabilidades del sistema operativo que ya han sido parcheadas en versiones posteriores. El ciclo de actualización del SO no está alineado con el calendario de lanzamientos LTS de Ubuntu. |
 | AM-05 | Configuración o implementación incorrecta del sistema de firewall | COM-1 y COM-2 (Comunicaciones) | F.14 | La ausencia o mala configuración del firewall permite que los puertos de comunicación (SSH en COM-1 y HTTP/HTTPS en COM-2) estén accesibles desde redes externas sin restricciones. Esto facilita el acceso no autorizado y la explotación de vulnerabilidades en los servicios expuestos. La evidencia en el SIEM muestra conexiones desde la IP maliciosa 10.11.75.247 y la implantación de un plugin no autorizado (AyzzbuXY), confirmando que el perímetro no está protegiendo adecuadamente la infraestructura. |
 
 En donde los códigos de las amenazas están dados por: 
@@ -206,20 +206,20 @@ En donde los códigos de las amenazas están dados por:
 ##### 🟢 Cálculo de Impacto
 | Ref.  | Activo Afectado | Dimensión Principal Afectada | Valor Acumulado | Degradación | Impacto |
 |--------|----------------|------------------------------|-----------------|-------------|---------|
-| AM-01 | SW-2 (Middleware) | I | 9 | 100% | 9.0 |
-| AM-02 | SW-1 (Aplicación Web) | C | 10 | 80%  | 8.0 |
-| AM-03 | SW-1 (Aplicación Web) | I | 9 | 50%  | 4.5 |
-| AM-04 | SW-1 (Aplicación Web) | I | 9 | 20%  | 1.8 |
-| AM-05 | INF-1 (Datos de negocio) | C | 10 | 100% | 10.0 |
+| AM-01 | WB-1 (App Web, TeamCity)        | C y Au  | 10 | 100% | 10.0 |
+| AM-02 | MD-1 (Middleware, OpenSSH)      | C y Au  | 10 | 85%  | 8.5 |
+| AM-03 | MD-2 (Middleware, Apache httpd) | C       | 10 | 10%  | 1.0 |
+| AM-04 | SO-1 (Servidor Ubuntu)          | C y Au  | 10 | 90%  | 9.0 |
+| AM-05 | COM-1 y COM-2 (Comunicaciones)  | C y Au  | 10 | 95% | 9.5 |
 
 ##### 🟢 Cálculo de Riesgo
 | Prioridad   | Ref.  | Activo Afectado              | Dimensión Principal Afectada | Degradación | Impacto | Probabilidad | Riesgo Potencial | Riesgo Cualitativo |
 |-------------|-------|------------------------------|------------------------------|-------------|----------|--------------|------------------|--------------------|
-| 1º Mayor    | AM-01 | SW-2 (Middleware)            | I                            | 100%        | 9.0      | 9,0          | 81.0             | Muy Alto / Crítico |
-| 2º          | AM-05 | INF-1 (Datos de negocio)     | C                            | 100%        | 10.0     | 8,0          | 80.0             | Alto               |
-| 3º          | AM-02 | SW-1 (Aplicación Web)        | C                            | 80%         | 8.0      | 9,0          | 72.0             | Alto               |
-| 5º          | AM-03 | SW-1 (Aplicación Web)        | I                            | 50%         | 4.5      | 7,0          | 31.5             | Medio              |
-| 6º          | AM-04 | SW-1 (Aplicación Web)        | I                            | 20%         | 1.8      | 3,0          | 5.4              | Bajo               |
+| 1º Mayor    | AM-01 | WB-1 (App Web, TeamCity)       | I                            | 100%        | 10.0     | 9.7          | 97.0             | Muy Alto / Crítico |
+| 2º          | AM-05 | COM-1 y COM-2 (Comunicaciones) | C                            | 95%         | 9.5      | 8.7          | 82.7             | Muy Alto / Crítico |
+| 3º          | AM-04 | SO-1 (Servidor Ubuntu)         | C                            | 90%         | 9.0      | 6.7          | 60.3             | Alto               |
+| 5º          | AM-02 | MD-1 (Middleware, OpenSSH)     | I                            | 85%         | 8.5      | 8.7          | 73.9             | Alto               |
+| 6º          | AM-03 | MD-2 (Middleware, Apache httpd)| I                            | 10%         | 1.0      | 8.0          | 8.0              | Bajo               |          
 #### 🔴 Selección de Salvaguardas
 ##### 🟢 Plan de Tratamiento del Riesgo
 | Ref. | Hallazgo                          | Código ENS | Acción Técnica Recomendada | ¿Qué reduce? |
