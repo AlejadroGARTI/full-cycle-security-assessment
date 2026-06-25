@@ -244,7 +244,7 @@ En donde los códigos de las amenazas están dados por:
 
 | Medidas de Seguridad | Por categoría o dimensión(es) | BAJO | MEDIO | ALTO |
 | :--- | :--- | :--- | :--- | :--- |
-| **org** | **Marco organizativo** | :--- | :--- | :--- |
+| ((**org**)) | **Marco organizativo** | :--- | :--- | :--- |
 | **org.1** | Política de seguridad | aplica | aplica | aplica |
 | **org.2** | Normativa de seguridad | aplica | aplica | aplica |
 | **org.3** | Procedimientos de seguridad | aplica | aplica | aplica |
