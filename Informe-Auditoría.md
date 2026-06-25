@@ -212,7 +212,7 @@ En donde los códigos de las amenazas están dados por:
 | Ref. | Hallazgo                          | Código ENS | Acción Técnica Recomendada | ¿Qué reduce? |
 |------|----------------------------------|------------|----------------------------|--------------|
 | AM-01 | Versión de TeamCity obsoleta y con vulnerabilidades críticas conocidas (2023.11.3)         | [op.exp.4] Mantenimiento y actualizaciones de seguridad     | Actualizar TeamCity a la última versión estable que corrija las vulnerabilidades CVE-2024-27198 y CVE-2024-27199. Establecer un proceso formal y periódico de actualización de software que incluya la monitorización de vulnerabilidades críticas. | Probabilidad |
-| AM-05 | Configuración o implementación incorrecta del sistema de firewall           | [op.exp.2] Configuración de seguridad      | Revisar y reconfigurar el firewall aplicando el principio de "menor privilegio". Restringir el acceso a los puertos de administración (SSH) y aplicaciones (HTTP/HTTPS) únicamente a redes internas o IPs confiables. | Probabilidad e Impacto |
+| AM-05 | Configuración o implementación incorrecta del sistema de firewall           | [op.exp.2] Configuración de seguridad      | Revisar y reconfigurar el firewall aplicando el principio de menor privilegio. Restringir el acceso a los puertos de administración (SSH) y aplicaciones (HTTP/HTTPS) únicamente a redes internas o IPs confiables. | Probabilidad e Impacto |
 | AM-04 | Versión del sistema operativo Linux desactualizada  | [op.exp.4] Mantenimiento y actualizaciones de seguridad      | Migrar el sistema operativo a una versión de Ubuntu LTS con soporte activo. Configurar el repositorio de paquetes para recibir actualizaciones de seguridad de forma automática o programada. | Probabilidad |
 | AM-02 | Versión de OpenSSH obsoleta con vulnerabilidades sin parchear      | [op.exp.4] Mantenimiento y actualizaciones de seguridad      | Actualizar OpenSSH a una versión superior a la 8.8 (preferiblemente la última estable). Implementar un cronograma de actualizaciones para el sistema operativo y sus componentes críticos. Revisar la configuración del servicio SSH para deshabilitar protocolos y cifrados obsoletos. | Probabilidad |
 | AM-03 | Versión de Apache obsoleta   | [op.exp.4] Mantenimiento y actualizaciones de seguridad      | Actualizar Apache httpd a la versión estable más reciente (2.4.68+). Automatizar el proceso de parcheo de seguridad para el middleware. | Probabilidad |
@@ -233,7 +233,7 @@ Para obtener más información sobre la selección de medidas de seguridad del E
 ---
 # Tablas externas
 
-## Cálculo del valor porpio ENS
+## Cálculo del valor propio ENS
 ```bash
 0 a 4: Nivel Bajo (B) - Poca afectación para la empresa.
 5 a 7: Nivel Medio (M) - Causa problemas notables, pero superables.
