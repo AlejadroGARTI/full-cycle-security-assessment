@@ -209,3 +209,23 @@ drwx------ 2 ubuntu ubuntu 4096 Jul  2  2024 .ssh
 cat flag.txt
 THM{faa9bac345709b6620a6200b484c7594}
 ```
+## 4.4 Estado del firewall del sistema
+
+```bash
+meterpreter > shell
+Process 1 created.
+Channel 1 created.
+sudo ufw status
+Status: inactive
+ufw --version
+/bin/sh: 2: ufw: not found
+systemctl status ufw
+● ufw.service - Uncomplicated firewall
+     Loaded: loaded (/lib/systemd/system/ufw.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Thu 2026-06-25 14:55:48 UTC; 8min ago
+       Docs: man:ufw(8)
+   Main PID: 186 (code=exited, status=0/SUCCESS)
+      Tasks: 0 (limit: 4671)
+     Memory: 0B
+     CGroup: /system.slice/ufw.service
+```
