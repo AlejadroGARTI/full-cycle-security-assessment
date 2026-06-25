@@ -117,6 +117,7 @@ Una vez instalado el agente, podemos ejecutar la línea de comandos mediante el 
 ## 3.4 Creación y ejecución de un plugin malicioso
 
 Un ataque exitoso puede implicar la carga de un plugin malicioso en TeamCity para obtener ejecución remota de código. La evidencia de esta actividad suele encontrarse en los registros de auditoría, donde se observa que un plugin es cargado, deshabilitado y eliminado en un corto período de tiempo por la misma cuenta de usuario. Aunque el atacante intente borrar sus huellas, pueden quedar artefactos en los directorios de plugins y la caché , así como entradas permanentes en el archivo disabled-plugins.xml. Por ello, los registros del servidor y la página de auditoría de TeamCity son fuentes clave para detectar y reconstruir la actividad maliciosa.
+
 ---
 
 # 4. MÉTODO ALTERNATIVO: EXPLOTACIÓN CON METASPLOIT 
