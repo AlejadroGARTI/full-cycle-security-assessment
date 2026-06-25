@@ -317,3 +317,14 @@ En donde los códigos de las amenazas están dados por:
 | **mp.s.2** | Protección de servicios y aplicaciones web | + [R1 o R2] | + [R1 o R2] | + R2 + R3 |
 | **mp.s.3** | Protección de la navegación web | aplica | aplica | + R1 |
 | **mp.s.4** | Protección frente a denegación de servicio | n.a. | aplica | + R1 |
+
+
+# Criticidad de los recursos
+
+| Efectos negativos producidos | Muy baja | Baja | Media | Alta | Muy Alta |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Muy Bajo** | MUY BAJO | MUY BAJO | MUY BAJO | BAJO | BAJO |
+| **Bajo** | MUY BAJO | BAJO | BAJO | MEDIO | MEDIO |
+| **Medio** | BAJO | MEDIO | MEDIO | ALTO | ALTO |
+| **Alto** | MEDIO | ALTO | ALTO | CRÍTICO | CRÍTICO |
+| **Muy Alto** | ALTO | CRÍTICO | CRÍTICO | CRÍTICO | CRÍTICO |
