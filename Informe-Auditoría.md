@@ -244,21 +244,26 @@ En donde los códigos de las amenazas están dados por:
 
 | Medidas de Seguridad | Por categoría o dimensión(es) | BAJO | MEDIO | ALTO |
 | :--- | :--- | :--- | :--- | :--- |
+| **org** | **Marco organizativo** | :--- | :--- | :--- |
 | **org.1** | Política de seguridad | aplica | aplica | aplica |
 | **org.2** | Normativa de seguridad | aplica | aplica | aplica |
 | **org.3** | Procedimientos de seguridad | aplica | aplica | aplica |
 | **org.4** | Proceso de autorización | aplica | aplica | aplica |
+| **op** | **Marco operacional** | :--- | :--- | :--- |
+| op.pl | Planificación | :--- | :--- | :--- |
 | **op.pl.1** | Análisis de riesgos | aplica | + R1 | + R2 |
 | **op.pl.2** | Arquitectura de Seguridad | aplica | + R1 | + R1 + R2 + R3 |
 | **op.pl.3** | Adquisición de nuevos componentes | aplica | aplica | aplica |
 | **op.pl.4** | Dimensionamiento/gestión de la capacidad | aplica | + R1 | + R1 |
 | **op.pl.5** | Componentes certificados | n.a. | aplica | aplica |
+| op.acc | Control de acceso | :--- | :--- | :--- |
 | **op.acc.1** | Identificación | aplica | + R1 | + R1 |
 | **op.acc.2** | Requisitos de acceso | aplica | aplica | + R1 |
 | **op.acc.3** | Segregación de funciones y tareas | n.a. | aplica | + R1 |
 | **op.acc.4** | Proceso de gestión de derechos de acceso | aplica | aplica | aplica |
 | **op.acc.5** | Mecanismo de autenticación (usuarios externos) | + [R1 o R2 o R3 o R4] | + [R2 o R3 o R4] + R5 | + [R2 o R3 o R4] + R5 |
 | **op.acc.6** | Mecanismo de autenticación (usuarios de la organización) | + [R1 o R2 o R3 o R4] + R8 + R9 | + [R1 o R2 o R3 o R4] + R5 + R8 + R9 | + [R1 o R2 o R3 o R4] + R5 + R6 + R7 + R8 + R9 |
+| op.exp | Explotación | :--- | :--- | :--- |
 | **op.exp.1** | Inventario de activos | aplica | aplica | aplica |
 | **op.exp.2** | Configuración de seguridad | aplica | aplica | aplica |
 | **op.exp.3** | Gestión de la configuración de seguridad | aplica | + R1 | + R1 + R2 + R3 |
@@ -269,18 +274,24 @@ En donde los códigos de las amenazas están dados por:
 | **op.exp.8** | Registro de la actividad | aplica | + R1 + R2 + R3 + R4 | + R1 + R2 + R3 + R4 + R5 |
 | **op.exp.9** | Registro de la gestión de incidentes | aplica | aplica | aplica |
 | **op.exp.10** | Protección de claves criptográficas | aplica | + R1 | + R1 |
+| op.ext | Recursos externos | :--- | :--- | :--- |
 | **op.ext.1** | Contratación y acuerdos de nivel de servicio | n.a. | aplica | aplica |
 | **op.ext.2** | Gestión diaria | n.a. | aplica | aplica |
 | **op.ext.3** | Protección de la cadena de suministro | n.a. | n.a. | aplica |
 | **op.ext.4** | Interconexión de sistemas | n.a. | aplica | + R1 |
+| op.nub | Servicios en la nube | :--- | :--- | :--- |
 | **op.nub.1** | Protección de servicios en la nube | aplica | + R1 | + R1 + R2 |
+| op.cont | Continuidad del servicio | :--- | :--- | :--- |
 | **op.cont.1** | Análisis de impacto | n.a. | aplica | aplica |
 | **op.cont.2** | Plan de continuidad | n.a. | n.a. | aplica |
 | **op.cont.3** | Pruebas periódicas | n.a. | n.a. | aplica |
 | **op.cont.4** | Medios alternativos | n.a. | n.a. | aplica |
+| op.mon | Monitorización del sistema | :--- | :--- | :--- |
 | **op.mon.1** | Detección de intrusión | aplica | + R1 | + R1 + R2 |
 | **op.mon.2** | Sistema de métricas | aplica | + R1 + R2 | + R1 + R2 |
 | **op.mon.3** | Vigilancia | aplica | + R1 + R2 | + R1 + R2 + R3 + R4 + R5 + R6 |
+| **mp** | **Medidas de protección** | :--- | :--- | :--- |
+| mp.if | Protección de las instalaciones e infraestructuras | :--- | :--- | :--- |
 | **mp.if.1** | Áreas separadas y con control de acceso | aplica | aplica | aplica |
 | **mp.if.2** | Identificación de las personas | aplica | aplica | aplica |
 | **mp.if.3** | Acondicionamiento de los locales | aplica | aplica | aplica |
@@ -288,38 +299,45 @@ En donde los códigos de las amenazas están dados por:
 | **mp.if.5** | Protección frente a incendios | aplica | aplica | aplica |
 | **mp.if.6** | Protección frente a inundaciones | n.a. | aplica | aplica |
 | **mp.if.7** | Registro de entrada y salida de equipamiento | aplica | aplica | aplica |
+| mp.per | Gestión del personal | :--- | :--- | :--- |
 | **mp.per.1** | Caracterización del puesto de trabajo | n.a. | aplica | aplica |
 | **mp.per.2** | Deberes y obligaciones | aplica | + R1 | + R1 |
 | **mp.per.3** | Concienciación | aplica | aplica | aplica |
 | **mp.per.4** | Formación | aplica | aplica | aplica |
+| mp.eq | 	Protección de los equipos | :--- | :--- | :--- |
 | **mp.eq.1** | Puesto de trabajo despejado | aplica | + R1 | + R1 |
 | **mp.eq.2** | Bloqueo de puesto de trabajo | n.a. | aplica | + R1 |
 | **mp.eq.3** | Protección de dispositivos portátiles | aplica | aplica | + R1 + R2 |
 | **mp.eq.4** | Otros dispositivos conectados a la red | aplica | + R1 | + R1 |
+| mp.com | Protección de las comunicaciones | :--- | :--- | :--- 
 | **mp.com.1** | Perímetro seguro | aplica | aplica | aplica |
 | **mp.com.2** | Protección de la confidencialidad | aplica | + R1 | + R1 + R2 + R3 |
 | **mp.com.3** | Protección de la integridad y de la autenticidad | aplica | + R1 + R2 | + R1 + R2 + R3 + R4 |
 | **mp.com.4** | Separación de flujos de información en la red | n.a. | + [R1 o R2 o R3] | + [R2 o R3] + R4 |
+| mp.si | 	Protección de los soportes de información | :--- | :--- | :--- 
 | **mp.si.1** | Marcado de soportes | n.a. | aplica | aplica |
 | **mp.si.2** | Criptografía | n.a. | aplica | + R1 + R2 |
 | **mp.si.3** | Custodia | aplica | aplica | aplica |
 | **mp.si.4** | Transporte | aplica | aplica | aplica |
 | **mp.si.5** | Borrado y destrucción | aplica | + R1 | + R1 |
+| mp.sw | Protección de las aplicaciones informáticas | :--- | :--- | :--- |
 | **mp.sw.1** | Desarrollo de aplicaciones | n.a. | + R1 + R2 + R3 + R4 | + R1 + R2 + R3 + R4 |
 | **mp.sw.2** | Aceptación y puesta en servicio | aplica | + R1 | + R1 |
+| mp.info | Protección de la información | :--- | :--- | :--- |
 | **mp.info.1** | Datos personales | aplica | aplica | aplica |
 | **mp.info.2** | Calificación de la información | n.a. | aplica | aplica |
 | **mp.info.3** | Firma electrónica | aplica | + R1 + R2 + R3 | + R1 + R2 + R3 + R4 |
 | **mp.info.4** | Sellos de tiempo | n.a. | n.a. | aplica |
 | **mp.info.5** | Limpieza de documentos | aplica | aplica | aplica |
 | **mp.info.6** | Copias de seguridad | aplica | + R1 | + R1 + R2 |
+| mp.s | Protección de los servicios | :--- | :--- | :--- |
 | **mp.s.1** | Protección del correo electrónico | aplica | aplica | aplica |
 | **mp.s.2** | Protección de servicios y aplicaciones web | + [R1 o R2] | + [R1 o R2] | + R2 + R3 |
 | **mp.s.3** | Protección de la navegación web | aplica | aplica | + R1 |
 | **mp.s.4** | Protección frente a denegación de servicio | n.a. | aplica | + R1 |
 
 
-| Criticidad de los recursos
+Criticidad de los recursos
 | Efectos negativos producidos | Muy baja | Baja | Media | Alta | Muy Alta |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Muy Bajo** | MUY BAJO | MUY BAJO | MUY BAJO | BAJO | BAJO |
