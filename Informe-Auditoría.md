@@ -245,7 +245,7 @@ En donde los códigos de las amenazas están dados por:
 
 ## Selección de medidas de seguridad del ENS
 
-| Medidas de Seguridad | Por categoría o dimensión(es) | BAJO | MEDIO | ALTO |
+| Medidas de Seguridad | Por categoría o dimensión(es) | Categoría de seguridad del sistema: BAJO | CSS: MEDIO | CSS: ALTO |
 | :--- | :--- | :--- | :--- | :--- |
 | **org** | **Marco organizativo** | :--- | :--- | :--- |
 | **org.1** | Política de seguridad | aplica | aplica | aplica |
@@ -343,7 +343,7 @@ Para obtener más información se puede consultar: https://www.boe.es/buscar/act
 
 ## Matriz de Riesgo
 
-| Efectos negativos producidos | Criticidad de los recursos: Muy baja | Criticidad: Baja | Criticidad:Media | Criticidad:Alta | Criticidad:Muy Alta |
+| Efectos negativos producidos | Criticidad de los recursos: Muy baja | Criticidad: Baja | Criticidad: Media | Criticidad: Alta | Criticidad: Muy Alta |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Muy Bajo** | MUY BAJO | MUY BAJO | MUY BAJO | BAJO | BAJO |
 | **Bajo** | MUY BAJO | BAJO | BAJO | MEDIO | MEDIO |
