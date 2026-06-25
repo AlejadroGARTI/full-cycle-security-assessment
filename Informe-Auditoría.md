@@ -215,11 +215,11 @@ En donde los códigos de las amenazas están dados por:
 ##### 🟢 Cálculo de Riesgo
 | Prioridad   | Ref.  | Activo Afectado              | Dimensión Principal Afectada | Degradación | Impacto | Probabilidad | Riesgo Potencial | Riesgo Cualitativo |
 |-------------|-------|------------------------------|------------------------------|-------------|----------|--------------|------------------|--------------------|
-| 1º Mayor    | AM-01 | WB-1 (App Web, TeamCity)       | I                            | 100%        | 10.0     | 9.7          | 97.0             | Muy Alto / Crítico |
-| 2º          | AM-05 | COM-1 y COM-2 (Comunicaciones) | C                            | 95%         | 9.5      | 8.7          | 82.7             | Muy Alto / Crítico |
-| 3º          | AM-04 | SO-1 (Servidor Ubuntu)         | C                            | 90%         | 9.0      | 6.7          | 60.3             | Alto               |
-| 5º          | AM-02 | MD-1 (Middleware, OpenSSH)     | I                            | 85%         | 8.5      | 8.7          | 73.9             | Alto               |
-| 6º          | AM-03 | MD-2 (Middleware, Apache httpd)| I                            | 10%         | 1.0      | 8.0          | 8.0              | Bajo               |          
+| 1º Mayor    | AM-01 | WB-1 (App Web, TeamCity)       | C y Au                     | 100%        | 10.0     | 9.7          | 97.0             | Muy Alto / Crítico |
+| 2º          | AM-05 | COM-1 y COM-2 (Comunicaciones) | C y Au                     | 95%         | 9.5      | 8.7          | 82.7             | Muy Alto / Crítico |
+| 3º          | AM-04 | SO-1 (Servidor Ubuntu)         | C y Au                     | 90%         | 9.0      | 6.7          | 60.3             | Alto               |
+| 5º          | AM-02 | MD-1 (Middleware, OpenSSH)     | C y Au                     | 85%         | 8.5      | 8.7          | 73.9             | Alto               |
+| 6º          | AM-03 | MD-2 (Middleware, Apache httpd)| C                          | 10%         | 1.0      | 8.0          | 8.0              | Bajo               |          
 #### 🔴 Selección de Salvaguardas
 ##### 🟢 Plan de Tratamiento del Riesgo
 | Ref. | Hallazgo                          | Código ENS | Acción Técnica Recomendada | ¿Qué reduce? |
@@ -234,6 +234,6 @@ En donde los códigos de las amenazas están dados por:
 |------|----------------------------------|----------------------------|--------------|-----------------|-----------------------------|
 | AM-01 | Versión obsoleta de PHP         | Actualizar a versión soportada y aplicar parches de seguridad                      | 80%          | 16.2           | Bajo       |
 | AM-05 | Servidor SQL obsoleto           | Actualizar motor de base de datos a versión soportada y parcheada                     | 80%          | 16.0           | Bajo    |
-| AM-02 | Actualización de WP disponible   | Actualizar WordPress a la última versión estable                      | 70%          | 21.6           | Medio          |
-| AM-03 | Temas inactivos instalados      | Eliminar temas no utilizados y mantener solo los necesarios                      | 90%          | 3.15           | Bajo      |
-| AM-04 | Faltan módulos recomendados     | Instalar plugins o módulos de seguridad recomendados                      | 100%         | 0          | Bajo                    |
+| AM-04 | Actualización de WP disponible   | Actualizar WordPress a la última versión estable                      | 70%          | 21.6           | Medio          |
+| AM-02 | Temas inactivos instalados      | Eliminar temas no utilizados y mantener solo los necesarios                      | 90%          | 3.15           | Bajo      |
+| AM-03 | Faltan módulos recomendados     | Instalar plugins o módulos de seguridad recomendados                      | 100%         | 0          | Bajo                    |
