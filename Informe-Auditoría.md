@@ -319,8 +319,7 @@ En donde los códigos de las amenazas están dados por:
 | **mp.s.4** | Protección frente a denegación de servicio | n.a. | aplica | + R1 |
 
 
-# Criticidad de los recursos
-
+| Criticidad de los recursos
 | Efectos negativos producidos | Muy baja | Baja | Media | Alta | Muy Alta |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Muy Bajo** | MUY BAJO | MUY BAJO | MUY BAJO | BAJO | BAJO |
