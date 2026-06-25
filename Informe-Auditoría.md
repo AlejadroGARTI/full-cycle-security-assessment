@@ -125,11 +125,6 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 | COM-2  | Comunicaciones (HTTP)     | 10 | 9 | 4 | 10 | 5 |
 | SO-1   | Servidor Ubuntu           | 9 | 3 | 2 | 9  | 6 |
 ###### ENS
-```bash
-0 a 4: Nivel Bajo (B) - Un fallo aquí apenas afecta a la empresa.
-5 a 7: Nivel Medio (M) - Un fallo aquí causa problemas notables, pero superables.
-8 a 10: Nivel Alto (A) - Un fallo aquí es crítico (multas legales, pérdida total de negocio).
-```
 | Ref.   | Activo                       | C  | I  | A  | Au | T  |
 |--------|------------------------------|----|----|----|----|----|
 | AC-1   | Archivos confidenciales      | A  | M  | B  | A  | A  |
@@ -230,16 +225,23 @@ Para obtener más información sobre la selección de medidas de seguridad del E
 ##### 🟢 Plan de Tratamiento del Riesgo Residual
 | Ref. | Hallazgo                          | Acción Técnica Recomendada | Eficacia (e) | Riesgo Residual  | Riesgo Residual Cualitativo |
 |------|----------------------------------|----------------------------|--------------|-----------------|-----------------------------|
-| AM-01 | Versión obsoleta de PHP         | Actualizar a versión soportada y aplicar parches de seguridad       | 80%          | 16.2           | Bajo       |
-| AM-05 | Servidor SQL obsoleto           | Actualizar motor de base de datos a versión soportada y parcheada   | 80%          | 16.0           | Bajo    |
-| AM-04 | Actualización de WP disponible   | Actualizar WordPress a la última versión estable                   | 70%          | 21.6           | Medio          |
-| AM-02 | Temas inactivos instalados      | Eliminar temas no utilizados y mantener solo los necesarios         | 90%          | 3.15           | Bajo      |
-| AM-03 | Faltan módulos recomendados     | Instalar plugins o módulos de seguridad recomendados                | 100%         | 0          | Bajo                    |
+| AM-01 | Versión de TeamCity obsoleta        | Actualizar TeamCity a la última versión estable que corrija las vulnerabilidades       | 85%          | 13.5           | Bajo       |
+| AM-05 | Configuración o implementación incorrecta del sistema de firewall           | Revisar y reconfigurar el firewall aplicando el principio de menor privilegio. Restringir el acceso a puertos de administración y aplicaciones   | 90%          | 4.0           | Bajo    |
+| AM-04 | Versión del sistema operativo Linux desactualizada   | Migrar el sistema operativo a una versión de Ubuntu LTS con soporte activo (22.04 LTS o 24.04 LTS).                   | 80%          | 21.6           | Medio          |
+| AM-02 | Versión de OpenSSH obsoleta con vulnerabilidades sin parchear      | Actualizar OpenSSH a una versión superior a la 8.8.        | 85%          | 7.8           | Bajo      |
+| AM-03 | Versión de Apache obsoleta     | Actualizar Apache httpd a la versión estable más reciente (2.4.68+). Automatizar el proceso de parcheo de seguridad para el middleware.                |80%         | 12.6          | Bajo                    |
 
 
 ---
 ---
 # Tablas externas
+
+## Cálculo del valor porpio ENS
+```bash
+0 a 4: Nivel Bajo (B) - Poca afectación para la empresa.
+5 a 7: Nivel Medio (M) - Causa problemas notables, pero superables.
+8 a 10: Nivel Alto (A) - Fallo  crítico (multas legales, pérdida total de negocio).
+```
 
 ## Cálculo de la probabilidad
 
