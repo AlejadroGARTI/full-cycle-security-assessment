@@ -14,7 +14,7 @@
 ---
 
 ## Resumen Ejecutivo
-Tras realizar la auditoría de seguridad basada en pruebas de penetración y análisis de logs para reconstruir la línea de tiempo del incidente, se concluye que la postura de seguridad de la infraestructura actual es crítica, ya que se han identificado y evaluado un total de 4 hallazgos, de los cuales 1 presenta un nivel de riesgo crítico y 3 presentan un nivel de riesgo muy alto por lo que la organización sigue expuesta a que ocurra de nuevo un ciberataque con una exilftración masiva de datos, con una probabilidad muy elevada en el corto plazo.
+Tras realizar la auditoría de seguridad basada en pruebas de penetración y análisis de logs para reconstruir la línea de tiempo del incidente, se concluye que la postura de seguridad de la infraestructura actual es crítica, ya que se han identificado y evaluado un total de 5 hallazgos, de los cuales 2 presentan un nivel de riesgo crítico y 3 presentan un nivel de riesgo muy alto por lo que la organización sigue expuesta a que ocurra de nuevo un ciberataque con una exilftración masiva de datos, con una probabilidad muy elevada en el corto plazo.
 
 El principal problema reside en el uso de software obsoleto y sin parches de seguridad, lo que convierte los sistemas críticos de la empresa en un blanco fácil para atacantes. Durante la fase de pentesting, se logró explotar con éxito la vulnerabilidad CVE-2024-27198 en TeamCity 2023.11.3, una vulnerabilidad crítica con un base score de 9.8, que permitió crear un usuario administrador no autorizado (AGARTI), inyectar tokens de acceso y obtener una shell inversa en el servidor, adquiriendo control completo sobre toda la infraestructura. Además, se identificaron versiones obsoletas de OpenSSH 8.2p1, Apache 2.4.41 y Ubuntu 20.04.6 LTS, que presentan vulnerabilidades conocidas y sin parchear.
 
@@ -75,6 +75,16 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 - **Causa:** Ciclo de actualización del sistema operativo no alineado con el calendario de lanzamientos LTS de Ubuntu, posiblemente por falta de recursos o planificación.
 - **Consecuencia e Impacto:** Fin del soporte estándar y reducción en la disponibilidad de actualizaciones de seguridad críticas, lo que incrementa la superficie de ataque y dificulta el cumplimiento normativo.
 - **Plan de Acción (Recomendación):** Planificar y ejecutar la migración a Ubuntu 26.04 LTS, incluyendo un análisis de compatibilidad de aplicaciones, respaldo completo de datos y un plan de contingencia ante posibles incidencias durante la actualización
+
+### Hallazgo 5
+
+- **Nombre del Hallazgo:** Firewall UFW inoperante o incompletamente instalado
+- **Nivel de Riesgo:** Crítico
+- **Condición:** El servicio ufw.service se encuentra activo según systemctl, sin embargo, el binario ufw no está disponible en el sistema (ufw: not found). El comando sudo ufw status reporta Status: inactive, lo que indica una instalación inconsistente o corrupta del paquete UFW.
+- **Criterio:** El sistema debe contar con un firewall funcional y correctamente configurado que gestione el tráfico entrante y saliente con políticas de denegación por defecto y reglas específicas para servicios autorizados.
+- **Causa:** Instalación incompleta o dañada del paquete ufw, posiblemente por interrupciones durante la instalación, dependencias rotas o limpieza manual inadecuada de binarios del sistema.
+- **Consecuencia e Impacto:** Ausencia de un firewall activo que filtre el tráfico de red, exponiendo todos los puertos y servicios del sistema a posibles ataques externos. Esto incrementa significativamente la superficie de ataque, facilita accesos no autorizados, y compromete la confidencialidad, integridad y disponibilidad de los datos y servicios alojados en el servidor.
+- **Plan de Acción (Recomendación):** Una vez que se hayan actualizado los demás componentes, instalar o actualizar el firewall y de ser posible, contrarar alguna solución de firewall de compañias especializadas como PaloAlto Networks o Fortinet.
 
 ## Anexos Técnicos
 
@@ -171,7 +181,7 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 | AM-02 | Versión de OpenSSH obsoleta con vulnerabilidades sin parchear | MD-1 (Middleware, OpenSSH) | S.21 | OpenSSH 8.2p1 es una versión anterior a la 8.8, que incluye parches para vulnerabilidades críticas como CVE-2021-41617 (fallo en la validación de certificados) y otros problemas de seguridad documentados. Al no estar actualizado, el servicio de administración remota queda expuesto a ataques de denegación de servicio, ejecución de comandos y acceso no autorizado. La ausencia de un ciclo de actualización planificado para componentes críticos agrava el riesgo. |
 | AM-03 | Versión de Apache obsoleta | MD-2 (Middleware, Apache httpd) | S.21 | Apache 2.4.41 es una versión que ha quedado obsoleta frente a las versiones estables actuales (2.4.68+). Presenta vulnerabilidades conocidas como desbordamientos de búfer, divulgación de información y posibles ejecuciones remotas de código (CVE-2021-40438, CVE-2021-44224, entre otras). La falta de monitoreo activo de actualizaciones de seguridad y la posible ausencia de un gestor de paquetes actualizado han permitido que el servidor web permanezca en una versión insegura. |
 | AM-04 | Versión del sistema operativo Linux desactualizada | SO-1 (Servidor Ubuntu) | S.21 | Ubuntu 20.04.6 LTS (Focal Fossa) ya no presenta actualizaciones de seguridad, lo que implica una reducción en la disponibilidad de actualizaciones de seguridad críticas para el kernel y los paquetes del sistema. Esto incrementa la superficie de ataque del servidor, dejándolo expuesto a vulnerabilidades del sistema operativo que ya han sido parcheadas en versiones posteriores. El ciclo de actualización del SO no está alineado con el calendario de lanzamientos LTS de Ubuntu. |
-| AM-05 | Configuración o implementación incorrecta del sistema de firewall | COM-1 y COM-2 (Comunicaciones) | F.14 | La ausencia o mala configuración del firewall permite que los puertos de comunicación (SSH en COM-1 y HTTP/HTTPS en COM-2) estén accesibles desde redes externas sin restricciones. Esto facilita el acceso no autorizado y la explotación de vulnerabilidades en los servicios expuestos. La evidencia en el SIEM muestra conexiones desde la IP maliciosa 10.11.75.247 y la implantación de un plugin no autorizado (AyzzbuXY), confirmando que el perímetro no está protegiendo adecuadamente la infraestructura. |
+| AM-05 | Configuración o implementación incorrecta del sistema de firewall | COM-1 y COM-2 (Comunicaciones) | F.14 | La ausencia del firewall permite que los puertos de comunicación (SSH en COM-1 y HTTP/HTTPS en COM-2) estén accesibles desde redes externas sin restricciones. Esto facilita el acceso no autorizado y la explotación de vulnerabilidades en los servicios expuestos. La evidencia en el SIEM muestra conexiones desde la IP maliciosa 10.11.75.247 y la implantación de un plugin no autorizado (AyzzbuXY), confirmando que el perímetro no está protegiendo adecuadamente la infraestructura. |
 
 En donde los códigos de las amenazas están dados por: 
 - **[S.21] Vulnerabilidades de los programas:** Uso de software obsoleto, sin actualizar o que ya no recibe parches de seguridad de sus creadores.
@@ -179,8 +189,6 @@ En donde los códigos de las amenazas están dados por:
 
 #### 🔴 Evaluación de Riesgos
 ##### 🟢 Cálculo de Probabilidad
-
-
 
 | Ref.  | Atracción | Facilidad | Accesibilidad | Probabilidad | P. Cualitativa |
 |--------|-----------|------------|---------------|--------------|----------------|
