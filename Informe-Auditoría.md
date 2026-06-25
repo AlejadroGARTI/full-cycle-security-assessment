@@ -176,23 +176,24 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 | AM-02 | Versión de OpenSSH obsoleta con vulnerabilidades sin parchear        | MD-1 (Middleware, OpenSSH)          | S.21         | |
 | AM-03 | Versión de Apache obsoleta          | MD-2 (Middleware,Apache httpd)         | S.21         |  |
 | AM-04 | Versión del sistema operativo Linux desactualizada          | SO-1 (Servidor Ubuntu)         | S.21         |  |
+| AM-05 | Configuración o implementación incorrecta del sistema de firewall          | COM-1 y COM-2 (Comunicaciones)        | F.14         |  |
 
 En donde los códigos de las amenazas están dados por: 
 - **[S.21] Vulnerabilidades de los programas:** Uso de software obsoleto, sin actualizar o que ya no recibe parches de seguridad de sus creadores.
 - **[S.22] Errores de configuración / Faltas funcionales:** Ausencia de componentes, librerías o módulos necesarios para que el sistema funcione correctamente y de forma segura.
 - **[S.24] Deficiencias de mantenimiento:** Dejar instalados componentes, plugins o temas que no se usan. Esto aumenta la "superficie de ataque".
 - **[A.11] Degradación del servicio:** Fallos o configuraciones pobres que hacen que el sistema vaya muy lento o pueda colapsar si recibe muchas visitas de golpe
+- **[F.14] Fallo en los controles de acceso perimetral:** Ausencia o mala configuración del firewall que permite el acceso no autorizado desde redes externas y control de las conexiones desde las redes internas al exterior.
 
 #### 🔴 Evaluación de Riesgos
 ##### 🟢 Cálculo de Probabilidad
 | Ref.  | Atracción | Facilidad | Accesibilidad | Probabilidad | P. Cualitativa |
 |--------|-----------|------------|---------------|--------------|----------------|
-| AM-01 | 8 | 9 | 10 | 9,0 | Crítica |
-| AM-02 | 9 | 8 | 10 | 9,0 | Crítica |
-| AM-03 | 6 | 7 | 8  | 7,0 | Alta |
-| AM-04 | 2 | 2 | 5  | 3,0 | Baja |
-| AM-05 | 9 | 8 | 7  | 8,0 | Crítica |
-| AM-06 | 5 | 8 | 10 | 7,7 | Alta |
+| AM-01 | 10 | 10 | 8 | 10 | Crítica |
+| AM-02 | 9 | 7 | 9 | 9,0 | Crítica |
+| AM-03 | 8 | 7 | 9 | 7,0 | Alta |
+| AM-04 | 6 | 7 | 9  | 3,0 | Baja |
+| AM-05 | 9 | 9 | 10  | 8,0 | Crítica |
 ##### 🟢 Cálculo de Impacto
 | Ref.  | Activo Afectado | Dimensión Principal Afectada | Valor Acumulado | Degradación | Impacto |
 |--------|----------------|------------------------------|-----------------|-------------|---------|
@@ -201,7 +202,6 @@ En donde los códigos de las amenazas están dados por:
 | AM-03 | SW-1 (Aplicación Web) | I | 9 | 50%  | 4.5 |
 | AM-04 | SW-1 (Aplicación Web) | I | 9 | 20%  | 1.8 |
 | AM-05 | INF-1 (Datos de negocio) | C | 10 | 100% | 10.0 |
-| AM-06 | HW-1 (Servidor Ubuntu) | A | 8 | 70%  | 5.6 | 
 
 ##### 🟢 Cálculo de Riesgo
 | Prioridad   | Ref.  | Activo Afectado              | Dimensión Principal Afectada | Degradación | Impacto | Probabilidad | Riesgo Potencial | Riesgo Cualitativo |
@@ -209,7 +209,6 @@ En donde los códigos de las amenazas están dados por:
 | 1º Mayor    | AM-01 | SW-2 (Middleware)            | I                            | 100%        | 9.0      | 9,0          | 81.0             | Muy Alto / Crítico |
 | 2º          | AM-05 | INF-1 (Datos de negocio)     | C                            | 100%        | 10.0     | 8,0          | 80.0             | Alto               |
 | 3º          | AM-02 | SW-1 (Aplicación Web)        | C                            | 80%         | 8.0      | 9,0          | 72.0             | Alto               |
-| 4º          | AM-06 | HW-1 (Servidor Ubuntu)       | A                            | 70%         | 5.6      | 7,7          | 43.12            | Medio              |
 | 5º          | AM-03 | SW-1 (Aplicación Web)        | I                            | 50%         | 4.5      | 7,0          | 31.5             | Medio              |
 | 6º          | AM-04 | SW-1 (Aplicación Web)        | I                            | 20%         | 1.8      | 3,0          | 5.4              | Bajo               |
 #### 🔴 Selección de Salvaguardas
@@ -219,15 +218,13 @@ En donde los códigos de las amenazas están dados por:
 | AM-01 | Versión obsoleta de PHP         | [op.exp.8] Gestión de vulnerabilidades y actualizaciones     | Actualizar a versión soportada y aplicar parches de seguridad | Probabilidad |
 | AM-05 | Servidor SQL obsoleto           | [op.exp.8] Gestión de vulnerabilidades y actualizaciones      | Actualizar motor de base de datos a versión soportada y parcheada | Probabilidad |
 | AM-02 | Actualización de WP disponible  | [op.exp.8] Gestión de vulnerabilidades y actualizaciones      | Actualizar WordPress a la última versión estable | Probabilidad |
-| AM-06 | No se ha detectado caché        | [op.pl.1] Arquitectura de seguridad      | Implementar sistema de caché | Impacto |
 | AM-03 | Temas inactivos instalados      | [op.exp.2] Configuración de seguridad      | Eliminar temas no utilizados y mantener solo los necesarios | Probabilidad |
 | AM-04 | Módulos recomendados faltantes   | [op.pl.1] Arquitectura de seguridad      | Instalar plugins o módulos de seguridad recomendados | Probabilidad |
 ##### 🟢 Plan de Tratamiento del Riesgo Residual
 | Ref. | Hallazgo                          | Acción Técnica Recomendada | Eficacia (e) | Riesgo Residual  | Riesgo Residual Cualitativo |
 |------|----------------------------------|----------------------------|--------------|-----------------|-----------------------------|
-| AM-01 | Versión obsoleta de PHP         | Actualizar a versión soportada y aplicar parches de seguridad                      | 80%          | 16.2           | Bajo                       |
-| AM-05 | Servidor SQL obsoleto           | Actualizar motor de base de datos a versión soportada y parcheada                     | 80%          | 16.0           | Bajo                       |
-| AM-02 | Actualización de WP disponible   | Actualizar WordPress a la última versión estable                      | 70%          | 21.6           | Medio                       |
-| AM-06 | No se ha detectado caché        | Implementar sistema de caché                      | 50%          | 21.56           | Medio                       |
-| AM-03 | Temas inactivos instalados      | Eliminar temas no utilizados y mantener solo los necesarios                      | 90%          | 3.15           | Bajo                      |
-| AM-04 | Faltan módulos recomendados     | Instalar plugins o módulos de seguridad recomendados                      | 100%         | 0          | Bajo                      |
+| AM-01 | Versión obsoleta de PHP         | Actualizar a versión soportada y aplicar parches de seguridad                      | 80%          | 16.2           | Bajo       |
+| AM-05 | Servidor SQL obsoleto           | Actualizar motor de base de datos a versión soportada y parcheada                     | 80%          | 16.0           | Bajo    |
+| AM-02 | Actualización de WP disponible   | Actualizar WordPress a la última versión estable                      | 70%          | 21.6           | Medio          |
+| AM-03 | Temas inactivos instalados      | Eliminar temas no utilizados y mantener solo los necesarios                      | 90%          | 3.15           | Bajo      |
+| AM-04 | Faltan módulos recomendados     | Instalar plugins o módulos de seguridad recomendados                      | 100%         | 0          | Bajo                    |
