@@ -78,7 +78,7 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 
 ### Hallazgo 5
 
-- **Nombre del Hallazgo:** Firewall UFW inoperante o incompletamente instalado
+- **Nombre del Hallazgo:** Firewall UFW inoperante o instalado de manera incompleta
 - **Nivel de Riesgo:** Crítico
 - **Condición:** El servicio ufw.service se encuentra activo según systemctl, sin embargo, el binario ufw no está disponible en el sistema (ufw: not found). El comando sudo ufw status reporta Status: inactive, lo que indica una instalación inconsistente o corrupta del paquete UFW.
 - **Criterio:** El sistema debe contar con un firewall funcional y correctamente configurado que gestione el tráfico entrante y saliente con políticas de denegación por defecto y reglas específicas para servicios autorizados.
