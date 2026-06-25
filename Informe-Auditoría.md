@@ -339,7 +339,7 @@ En donde los códigos de las amenazas están dados por:
 | **mp.s.3** | Protección de la navegación web | aplica | aplica | + R1 |
 | **mp.s.4** | Protección frente a denegación de servicio | n.a. | aplica | + R1 |
 
-Para obtener más información se puede consultar: https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191
+Para obtener más información se puede consultar: https[:]//www.boe.es/buscar/act.php?id=BOE-A-2022-7191
 
 ## Matriz de Riesgo
 
