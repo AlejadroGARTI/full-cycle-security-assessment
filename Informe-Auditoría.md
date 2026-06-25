@@ -172,10 +172,10 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 #### 🔴 Identificación de Amenazas
 | Ref.  | Hallazgo                                | Activo Afectado | Código Amenaza | Justificación |
 |-------|-----------------------------------------|----------------|---------------|--------------|
-| AM-01 | Versión obsoleta de PHP (7.0.33-0ubuntu0.16.04.16)        | SW-2 (Middleware)          | S.21         | Al ser una versión obsoleta del 2018 que ya no recibe parches de seguridad , se expone tanto al servidor, como a la página web a recibir ataques críticos, en donde desctacan vulnerabilidades como la inyección de Comando (CVE-2018-19518) en donde un fallo crítico en la función imap_open, permite a un atacante remoto ejecutar comandos arbitrarios en el servidor enviando un nombre de servidor IMAP manipulado. |
-| AM-02 | Actualización de WordPress (7.0)        | SW-1 (Aplicación Web)          | S.21         | La versión actual de WordPress (6.5.8) posee múltiples vulnerabilidades, entre las que destacan una vulnerabilidad de tipo SSRF (Server-Side Request Forgery) que permite que un atacante obligue al servidor a hacer peticiones internas o externas o también una vulnerabilidad de tipo XSS (Cross-Site Scripting) que permite el secuestro de cuentas y el robo de cookies o sesiones.|
-| AM-03 | Eliminación de temas inactivos          | SW-1 (Aplicación Web)         | S.24         | Los temas inactivos pueden tener vulnerabilidades de seguridad, y al estar fuera de uso, es más probable que no se actualicen y sus versiones presenten graves problemas de seguridad. |
-| AM-04 | Módulos recomendados faltantes          | SW-1 (Aplicación Web)         | S.22         | La ausencia de los módulos recomendados, en si no representa un fallo crítico de seguridad, sin embargo, la configuración recomendada y la instalación de estos módulos permite reforzar la seguridad y el funcionamiento del sitio.  |
+| AM-01 | Versión de TeamCity obsoleta y con vulnerabilidades críticas conocidas (2023.11.3)       |  WB-1 (App Web, TeamCity)           | S.21         |  |
+| AM-02 | Versión de OpenSSH obsoleta con vulnerabilidades sin parchear        | MD-1 (Middleware, OpenSSH)          | S.21         | |
+| AM-03 | Versión de Apache obsoleta          | MD-2 (Middleware,Apache httpd)         | S.21         |  |
+| AM-04 | Versión del sistema operativo Linux desactualizada          | SO-1 (Servidor Ubuntu)         | S.21         |  |
 
 En donde los códigos de las amenazas están dados por: 
 - **[S.21] Vulnerabilidades de los programas:** Uso de software obsoleto, sin actualizar o que ya no recibe parches de seguridad de sus creadores.
