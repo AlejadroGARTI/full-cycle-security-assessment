@@ -188,9 +188,10 @@ En donde los códigos de las amenazas están dados por:
 #### 🔴 Evaluación de Riesgos
 ##### 🟢 Cálculo de Probabilidad
 
-|| Muy baja | Baja | Media | Alta | Crítica |
+|Probabilidad| Muy baja | Baja | Media | Alta | Crítica |
 |---|---|---|---|---|---|
 | Frecuencia | 0 - 1,9 | 2 - 3,9 | 4 - 5,9 | 6 - 7,9 | 8 - 10 |
+|ARO |0 - 1,9| 2 - 3,9| 4 - 5,9 |6 - 7,9| 8 - 10
 | Estadística | > 1 año | Cada año | Cada mes | Cada semana | Cada día |
 
 
@@ -201,6 +202,7 @@ En donde los códigos de las amenazas están dados por:
 | AM-03 | 8 | 7 | 9 | 8,0 |  Crítica |
 | AM-04 | 6 | 5 | 7  | 6,7 | Alta |
 | AM-05 | 9 | 9 | 8  | 8,7 | Crítica |
+
 ##### 🟢 Cálculo de Impacto
 | Ref.  | Activo Afectado | Dimensión Principal Afectada | Valor Acumulado | Degradación | Impacto |
 |--------|----------------|------------------------------|-----------------|-------------|---------|
