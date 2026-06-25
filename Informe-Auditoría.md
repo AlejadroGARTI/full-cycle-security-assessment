@@ -14,7 +14,7 @@
 ---
 
 ## Resumen Ejecutivo
-Tras realizar la auditoría de seguridad basada en pruebas de penetración (Red Team) y análisis de logs (Blue Team), se concluye que la postura de seguridad de la infraestructura actual es crítica, ya que se han identificado y evaluado un total de 4 hallazgos, de los cuales 1 presenta un nivel de riesgo crítico y 3 presentan un nivel de riesgo muy alto por lo que la organización está expuesta a ciberataques con una probabilidad muy elevada en el corto plazo, en donde estos problemas pueden afectar gravemente los activos de la empresa.
+Tras realizar la auditoría de seguridad basada en pruebas de penetración y análisis de logs para reconstruir la línea de tiempo del incidente, se concluye que la postura de seguridad de la infraestructura actual es crítica, ya que se han identificado y evaluado un total de 4 hallazgos, de los cuales 1 presenta un nivel de riesgo crítico y 3 presentan un nivel de riesgo muy alto por lo que la organización está expuesta a ciberataques con una probabilidad muy elevada en el corto plazo, en donde estos problemas pueden afectar gravemente los activos de la empresa.
 
 El principal problema reside en el uso de software obsoleto y sin parches de seguridad, lo que convierte los sistemas críticos de la empresa en un blanco fácil para atacantes. Durante la fase de pentesting, se logró explotar con éxito la vulnerabilidad CVE-2024-27198 en TeamCity 2023.11.3, una vulnerabilidad crítica con un base score de 9.8, que permitió crear un usuario administrador no autorizado (AGARTI), inyectar tokens de acceso y obtener una shell inversa en el servidor, adquiriendo control completo sobre toda la infraestructura. Además, se identificaron versiones obsoletas de OpenSSH 8.2p1, Apache 2.4.41 y Ubuntu 20.04.6 LTS, que presentan vulnerabilidades conocidas y sin parchear.
 
@@ -104,34 +104,70 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
                                      └──────────┼──────────┘
                                                 │
                                         ┌───────▼───────┐
-                                        │ Ubuntu Server │ ((SO-1)) 
+                         ((AC-1)) ──────│ Ubuntu Server │ ((SO-1)) 
                                         └───────────────┘
 ```
 
 ### Tablas de Auditoría
 
-#### 🔴 Identificación y Valoración de Activos
+#### 🔴 Identificación y Valoración de Activos (Post-Explotación)
 ##### 🟢 Valor propio
+###### MAGERIT 
+| Ref.   | Activo              | C | I | A | Au | T |
+|--------|---------------------|---|---|---|----|---|
+| AC-1  | Archivos confidenciales    | 10 | 6 | 2 | 9 | 8 |
+| WB-1  | App Web (TeamCity)         | 10 | 8 | 4 | 10 | 4 |
+| WB-2  | App Web (Mantenimiento)    | 1 | 1 | 1 | 1  | 1 |
+| MD-1  | Middleware (Open SSH)      | 10 | 9 | 4 | 10 | 5 |
+| MD-2  | Middleware (Apache httpd)  | 4 | 2 | 1 | 2  | 3 |
+| MD-3  | Middleware (Apache tomcat) | 10 | 8 | 4 | 9 | 4 |
+| COM-1  | Comunicaciones (SSH)      | 10 | 9 | 4 | 10 | 4 |
+| COM-2  | Comunicaciones (HTTP)     | 10 | 9 | 4 | 10 | 5 |
+| SO-1   | Servidor Ubuntu           | 9 | 3 | 2 | 9  | 6 |
+###### ENS
+```bash
+0 a 4: Nivel Bajo (B) - Un fallo aquí apenas afecta a la empresa.
+5 a 7: Nivel Medio (M) - Un fallo aquí causa problemas notables, pero superables.
+8 a 10: Nivel Alto (A) - Un fallo aquí es crítico (multas legales, pérdida total de negocio).
+```
+| Ref.   | Activo                       | C  | I  | A  | Au | T  |
+|--------|------------------------------|----|----|----|----|----|
+| AC-1   | Archivos confidenciales      | A  | M  | B  | A  | A  |
+| WB-1   | App Web (TeamCity)           | A  | A  | B  | A  | B  |
+| WB-2   | App Web (Mantenimiento)      | B  | B  | B  | B  | B  |
+| MD-1   | Middleware (OpenSSH)         | A  | A  | B  | A  | M  |
+| MD-2   | Middleware (Apache httpd)    | B  | B  | B  | B  | B  |
+| MD-3   | Middleware (Apache Tomcat)   | A  | A  | B  | A  | B  |
+| COM-1  | Comunicaciones (SSH)         | A  | A  | B  | A  | B  |
+| COM-2  | Comunicaciones (HTTP)        | A  | A  | B  | A  | M  |
+| SO-1   | Servidor Ubuntu              | A  | B  | B  | A  | M  |
+
+##### 🟢 Valor acumulado
 ###### MAGERIT
 | Ref.   | Activo              | C | I | A | Au | T |
 |--------|---------------------|---|---|---|----|---|
-| WB-1  | App Web (TeamCity)    | 10 | 10 | 6 | 10  | 4 |
-| WB-2  | App Web (Mantenimiento)  | 1 | 1 | 1 | 1  | 1 |
-| MD-1  | Middleware (Open SSH)    | 10 | 10 | 7 | 10  | 6 |
-| MD-2  | Middleware (Apache httpd)   | 4 | 2 | 1 | 2  | 3 |
-| MD-3  | Middleware (Apache tomcat)   | 10 | 8 | 6 | 10  | 4 |
-| COM-1  | Comunicaciones (SSH)     | 10 | 9 | 8 | 10  | 7 |
-| COM-2  | Comunicaciones (HTTP)     | 10 | 9 | 6 | 10  | 5 |
-| SO-1   | Servidor Ubuntu     | 8 | 9 | 9 | 8  | 7 |
+| AC-1  | Archivos confidenciales    | 10 | 6 | 2 | 9 | 8 |
+| WB-1  | App Web (TeamCity)         | 10 | 8 | 4 | 10 | 8 |
+| WB-2  | App Web (Mantenimiento)    | 10 | 8 | 4 | 10  | 8 |
+| MD-1  | Middleware (Open SSH)      | 10 | 9 | 4 | 10 | 8 |
+| MD-2  | Middleware (Apache httpd)  | 10 | 9 | 4 | 10  | 8 |
+| MD-3  | Middleware (Apache tomcat) | 10 | 9 | 4 | 10 | 8 |
+| COM-1  | Comunicaciones (SSH)      | 10 | 9 | 4 | 10 | 8 |
+| COM-2  | Comunicaciones (HTTP)     | 10 | 9 | 4 | 10 | 8 |
+| SO-1   | Servidor Ubuntu           | 10 | 9 | 4 | 10  | 8 |
+
 ###### ENS
-
-
-
-
-
-
-##### 🟢 Valor acumulado
-
+| Ref.   | Activo                       | C  | I  | A  | Au | T  |
+|--------|------------------------------|----|----|----|----|----|
+| AC-1   | Archivos confidenciales      | A  | M  | B  | A  | A  |
+| WB-1   | App Web (TeamCity)           | A  | A  | B  | A  | A  |
+| WB-2   | App Web (Mantenimiento)      | A  | A  | B  | A  | A  |
+| MD-1   | Middleware (OpenSSH)         | A  | A  | B  | A  | A  |
+| MD-2   | Middleware (Apache httpd)    | A  | A  | B  | A  | A  |
+| MD-3   | Middleware (Apache Tomcat)   | A  | A  | B  | A  | A  |
+| COM-1  | Comunicaciones (SSH)         | A  | A  | B  | A  | A  |
+| COM-2  | Comunicaciones (HTTP)        | A  | A  | B  | A  | A  |
+| SO-1   | Servidor Ubuntu              | A  | A  | B  | A  | A  |
 
 #### 🔴 Identificación de Amenazas
 | Ref.  | Hallazgo                                | Activo Afectado | Código Amenaza | Justificación |
