@@ -93,15 +93,15 @@ La identificación de la clave pública utilizada por el atacante es esencial pa
 # 3. LINEA TEMPORAL
 
 ASE 1: EXPLOTACIÓN INICIAL (04 de Julio)
-22:32:37	Creación de usuario malicioso	
-22:32:37	Configuración de credenciales	
-Instalación del paquete malicioso	
-Instalación del plugin malicioso	
+- 22:32:37	Creación de usuario malicioso	
+- 22:32:37	Configuración de credenciales	
+- Instalación del paquete malicioso	
+- Instalación del plugin malicioso	
 FASE 2: PERSISTENCIA Y MOVIMIENTO LATERAL 
-23:00	Activación del datacollector	
-23:30	Expansión del plugin	
+- 23:00	Activación del datacollector	
+- 23:30	Expansión del plugin	
 FASE 3: ACTIVIDAD DETECTADA (Post-explotación)
-2024-07-04/05	Múltiples conexiones desde IP 10.11.75.247	
+- 2024-07-04/05	Múltiples conexiones desde IP 10.11.75.247	
 
 
 
