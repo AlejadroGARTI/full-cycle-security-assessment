@@ -100,7 +100,6 @@ La identificación de la clave pública utilizada por el atacante es esencial pa
 - 23:17:14 El servidor crea la conexión	mediante el puerto 22
 - 23:18:31 Se acepta la clave públicadesde la ip 10.11.75.247 usando el puerto 51675
 - 23:18:31 Se abre la sesión para el atacante
-- 2024-07-04/05	Múltiples conexiones desde IP 10.11.75.247	
 
 
 
