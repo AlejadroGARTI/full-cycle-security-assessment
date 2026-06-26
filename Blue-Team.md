@@ -92,7 +92,7 @@ La identificación de la clave pública utilizada por el atacante es esencial pa
 
 # 3. LINEA TEMPORAL
 
-ASE 1: EXPLOTACIÓN INICIAL (04 de Julio)
+(04 de Julio)
 - 22:32:37 Creación de usuario malicioso	
 - 22:32:37 Configuración de credenciales	
 - 22:58:23 Instalación del paquete malicioso	
