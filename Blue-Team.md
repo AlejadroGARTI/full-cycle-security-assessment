@@ -96,7 +96,7 @@ ASE 1: EXPLOTACIÓN INICIAL (04 de Julio)
 - 22:32:37	Creación de usuario malicioso	
 - 22:32:37	Configuración de credenciales	
 - 22:58:23 Instalación del paquete malicioso	
-- Instalación del plugin malicioso	
+- 22:08:31 Instalación del plugin malicioso	
 
 FASE 2: PERSISTENCIA Y MOVIMIENTO LATERAL 
 - 23:00	Activación del datacollector	
