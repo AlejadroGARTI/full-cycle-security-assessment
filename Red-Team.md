@@ -54,7 +54,7 @@ Mediante investigación OSINT encontramos una vulnerabilidad crítica (CVE-2024-
 
 ## 2.2 Creación de usuario administrador mediante exploit
 
-Esta vulnerabilidad crítica con un base score de 9.8, permite ejecutar código malicioso con el cual podemos crear un nuevo usaurio y contraseña, los cuales serán almacenados y nos permitira acceso completo a la página web, el código lo podemos encontrar en la siguiente dirección: hxxps[://]github[.]com/yoryio/CVE-2024-27198/blob/main/CVE-2024-27198.py
+Esta vulnerabilidad crítica con un base score de 9.8, permite ejecutar código malicioso con el cual podemos crear un nuevo usuario y contraseña, los cuales serán almacenados y nos permitirá acceso completo a la página web, el código lo podemos encontrar en la siguiente dirección: hxxps[://]github[.]com/yoryio/CVE-2024-27198/blob/main/CVE-2024-27198.py
 
 Una vez ejecutado el comando `python CVE-2024-27198.py -t http://10.128.148.36:50000/ -u AGARTI -p root` hemos creado un nuevo usuario con permisos de administrador (AGARTI) con una nueva contraseña (root). Lo que nos permite acceder a la página web.
 
@@ -187,7 +187,7 @@ meterpreter > shell
 Process 1 created.
 Channel 1 created.
 ```
-Como podemos observar en la salida de la terminal y en las fases de explotación, lo que hace metasploit es basicamente lo mismo que la opción #1 de esta prueba de vulnerabilidades, pero de manera automatizada y mucho más rápida, ya que estaríamos creando un ataque a velocidad máquina. Ambos métodos de ataque dejan un rastro que podemos osbervar en la fase de análisais en splunk: [Análisis en Splunk](Blue-Team.md)
+Como podemos observar en la salida de la terminal y en las fases de explotación, lo que hace metasploit es básicamente lo mismo que la opción #1 de esta prueba de vulnerabilidades, pero de manera automatizada y mucho más rápida, ya que estaríamos creando un ataque a velocidad máquina. Ambos métodos de ataque dejan un rastro que podemos observar en la fase de análisis en splunk: [Análisis en Splunk](Blue-Team.md)
 
 ```bash
 FASES DE EXPLOTACIÓN CVE-2024-27198
