@@ -187,7 +187,7 @@ meterpreter > shell
 Process 1 created.
 Channel 1 created.
 ```
-Como podemos observar en la salida de la terminal, y en las fases de explotación que se encuentran debajo, lo que hace metasploit es basicamente lo mismo que la opción #1 de esta prueba de vulnerabilidades, pero de manera automatizada y mucho más rápida, ya que estaríamos creando un ataque a velocidad máquina. Ambos métodos de ataque dejan un rastro que podemos osbervar en la fase de análisais en splunk: [Análisis en Splunk](Blue-Team.md)
+Como podemos observar en la salida de la terminal y en las fases de explotación, lo que hace metasploit es basicamente lo mismo que la opción #1 de esta prueba de vulnerabilidades, pero de manera automatizada y mucho más rápida, ya que estaríamos creando un ataque a velocidad máquina. Ambos métodos de ataque dejan un rastro que podemos osbervar en la fase de análisais en splunk: [Análisis en Splunk](Blue-Team.md)
 
 ```bash
 FASES DE EXPLOTACIÓN CVE-2024-27198
