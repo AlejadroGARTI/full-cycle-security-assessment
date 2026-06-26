@@ -239,7 +239,7 @@ Para obtener más información sobre la selección de medidas de seguridad del E
 
 ---
 ---
-# Tablas externas
+# Criterios de evaluación y cuantificación del riesgo
 
 ## Cálculo del valor propio ENS
 ```bash
