@@ -266,3 +266,6 @@ Para obtener más información sobre la selección de medidas de seguridad del E
 | **Medio** | BAJO | MEDIO | MEDIO | ALTO | ALTO |
 | **Alto** | MEDIO | ALTO | ALTO | CRÍTICO | CRÍTICO |
 | **Muy Alto** | ALTO | CRÍTICO | CRÍTICO | CRÍTICO | CRÍTICO |
+
+## Cálculo del riesgo residual 
+```Riesgo Residual = (Probabilidad × Impacto) × (1 − e)```
