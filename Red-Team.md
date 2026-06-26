@@ -255,6 +255,8 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCMLOT6NhiqH5Rp36qJt4jZwfvb/H/+YLRTrx5mS9dS
 no-port-forwarding,no-agent-forwarding,no-X11-forwarding,command="echo 'Please login as the user \"ubuntu\" rather than the user \"root\".';echo;sleep 10;exit 142" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDv+eTaaWXys/ShDXGE/KIelCUYFqP+OQhAwL6LsFml9JR2kA8lWvRM2WQ6QKflnPw47lDggsBcdehASvBj4PaI+boh4slv/RbZCJIMTYKXyh+PysjwefcPs6SQ97NCMbXux/jLMxthXhHwBvMi8/jnKFe4725JZbHHSQW2e32taLkxxVWajjQ6rFXzV31O0PycHu1G6BkBAsqVXvT0D/L6A3D9DA9H3P2gFN+BoLWJ//Fnnu1fVYQnnlzNsHaCRyHXBDhFf1Ih5uVGoHpLU9YyBag0fu+3UQcTFXGoinCPlaiwXgwtXYgZvyi1BjUrMjmkkKLTu2m9F/w0hLrycYTh eu-west-3-vuln-vms
 ```
 
+Logrando el acceso a esta ruta, se logra la persistencia porque el archivo ~/.ssh/authorized_keys permite definir qué claves públicas pueden autenticarse en el sistema sin necesidad de contraseña por lo que si un atacante añade su clave pública ahí, podrá volver a acceder al sistema en cualquier momento mediante SSH, incluso después de reinicios o cambios de contraseña, ya que la autenticación depende de la clave y no de credenciales temporales.
+
 ## 4.5 Acceso al sistema y recuperación de la flag
 
 ```bash
