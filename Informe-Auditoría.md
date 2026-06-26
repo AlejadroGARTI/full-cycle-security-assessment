@@ -230,11 +230,11 @@ Para obtener más información sobre la selección de medidas de seguridad del E
 ##### 🟢 Plan de Tratamiento del Riesgo Residual
 | Ref. | Hallazgo                          | Acción Técnica Recomendada | Eficacia (e) | Riesgo Residual  | Riesgo Residual Cualitativo |
 |------|----------------------------------|----------------------------|--------------|-----------------|-----------------------------|
-| AM-01 | Versión de TeamCity obsoleta        | Actualizar TeamCity a la última versión estable que corrija las vulnerabilidades       | 85%          | 13.5           | Bajo       |
-| AM-05 | Configuración o implementación incorrecta del sistema de firewall           | Revisar y reconfigurar el firewall aplicando el principio de menor privilegio. Restringir el acceso a puertos de administración y aplicaciones   | 90%          | 4.0           | Bajo    |
-| AM-04 | Versión del sistema operativo Linux desactualizada   | Migrar el sistema operativo a una versión de Ubuntu LTS con soporte activo (22.04 LTS o 24.04 LTS).                   | 80%          | 21.6           | Medio          |
-| AM-02 | Versión de OpenSSH obsoleta con vulnerabilidades sin parchear      | Actualizar OpenSSH a una versión superior a la 8.8.        | 85%          | 7.8           | Bajo      |
-| AM-03 | Versión de Apache obsoleta     | Actualizar Apache httpd a la versión estable más reciente (2.4.68+). Automatizar el proceso de parcheo de seguridad para el middleware.                |80%         | 12.6          | Bajo                    |
+| AM-01 | Versión de TeamCity obsoleta        | Actualizar TeamCity a la última versión estable que corrija las vulnerabilidades       | 95%          |  4.85         | Bajo       |
+| AM-05 | Configuración o implementación incorrecta del sistema de firewall           | Revisar y reconfigurar el firewall aplicando el principio de menor privilegio. Restringir el acceso a puertos de administración y aplicaciones   | 90%          |   8.27         | Bajo    |
+| AM-04 | Versión del sistema operativo Linux desactualizada   | Migrar el sistema operativo a una versión de Ubuntu LTS con soporte activo (22.04 LTS o 24.04 LTS).                   | 85%          |    9.05       | Bajo          |
+| AM-02 | Versión de OpenSSH obsoleta con vulnerabilidades sin parchear      | Actualizar OpenSSH a una versión superior a la 8.8.        | 85%          |   11.09       | Bajo      |
+| AM-03 | Versión de Apache obsoleta     | Actualizar Apache httpd a la versión estable más reciente (2.4.68+). Automatizar el proceso de parcheo de seguridad para el middleware.                |95%         |   0.40      | Bajo                    |
 
 
 ---
