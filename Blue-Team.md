@@ -96,7 +96,7 @@ La identificación de la clave pública utilizada por el atacante es esencial pa
 - 22:32:37 Creación de usuario malicioso	
 - 22:32:37 Configuración de credenciales	
 - 22:58:23 Instalación del paquete malicioso	
-- 22:08:31 Instalación del plugin malicioso	
+- 22:08:31 Instalación del plugin malicioso	(Probablemente un error, hora: 22:58:31)
 - 23:17:14 El servidor crea la conexión	mediante el puerto 22
 - 23:18:31 Se acepta la clave pública desde la ip 10.11.75.247 usando el puerto 51675
 - 23:18:31 Se abre la sesión para el atacante
