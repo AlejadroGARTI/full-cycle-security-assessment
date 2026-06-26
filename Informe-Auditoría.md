@@ -225,7 +225,7 @@ En donde los códigos de las amenazas están dados por:
 | AM-02 | Versión de OpenSSH obsoleta con vulnerabilidades sin parchear      | [op.exp.4] Mantenimiento y actualizaciones de seguridad      | Actualizar OpenSSH a una versión superior a la 8.8 (preferiblemente la última estable). Implementar un cronograma de actualizaciones para el sistema operativo y sus componentes críticos. Revisar la configuración del servicio SSH para deshabilitar protocolos y cifrados obsoletos. | Probabilidad |
 | AM-03 | Versión de Apache obsoleta   | [op.exp.4] Mantenimiento y actualizaciones de seguridad      | Actualizar Apache httpd a la versión estable más reciente (2.4.68+). Automatizar el proceso de parcheo de seguridad para el middleware. | Probabilidad |
 
-Para obtener más información sobre la selección de medidas de seguridad del ENS consultar: https://boe[.]es/buscar/act.php?id=BOE-A-2022-7191 y seleccionar la versión del 2024 o posterior. Ver el ANEXO II: Medidas de Seguridad.
+Para obtener más información sobre la selección de medidas de seguridad del ENS consultar: hxxps[:]//boe[.]es/buscar/act.php?id=BOE-A-2022-7191 y seleccionar la versión del 2024 o posterior. Ver el ANEXO II: Medidas de Seguridad.
 
 ##### 🟢 Plan de Tratamiento del Riesgo Residual
 | Ref. | Hallazgo                          | Acción Técnica Recomendada | Eficacia (e) | Riesgo Residual  | Riesgo Residual Cualitativo |
