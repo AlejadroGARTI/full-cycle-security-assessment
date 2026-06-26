@@ -84,7 +84,7 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
 - **Criterio:** El sistema debe contar con un firewall funcional y correctamente configurado que gestione el tráfico entrante y saliente con políticas de denegación por defecto y reglas específicas para servicios autorizados.
 - **Causa:** Instalación incompleta o dañada del paquete ufw, posiblemente por interrupciones durante la instalación, dependencias rotas o limpieza manual inadecuada de binarios del sistema.
 - **Consecuencia e Impacto:** Ausencia de un firewall activo que filtre el tráfico de red, exponiendo todos los puertos y servicios del sistema a posibles ataques externos. Esto incrementa significativamente la superficie de ataque, facilita accesos no autorizados, y compromete la confidencialidad, integridad y disponibilidad de los datos y servicios alojados en el servidor.
-- **Plan de Acción:** Una vez que se hayan actualizado los demás componentes, instalar o actualizar el firewall y de ser posible, contrarar alguna solución de firewall de compañias especializadas como PaloAlto Networks o Fortinet.
+- **Plan de Acción:** Una vez que se hayan actualizado los demás componentes, instalar o actualizar el firewall y de ser posible, contratar alguna solución de firewall de compañias especializadas como PaloAlto Networks o Fortinet.
 
 ## Anexos Técnicos
 
