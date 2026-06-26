@@ -90,7 +90,7 @@ La identificación de la clave pública utilizada por el atacante es esencial pa
 
 ![](Evidencias_Visuales/BlueTeam/publickey)
 
-# 3. LINEA TEMPORAL
+# 3. LÍNEA TEMPORAL
 
 (04 de Julio)
 - 22:32:37 Creación de usuario malicioso	
