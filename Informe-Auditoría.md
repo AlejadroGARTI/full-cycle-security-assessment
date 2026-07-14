@@ -102,9 +102,9 @@ Se ha auditado el servidor principal con sistema operativo Ubuntu 20.04.6 LTS (F
                                                 └───┬────┘     └───┬────┘ 
                                                     │              │
                                                 ┌───▼────┐     ┌───▼────┐
-                                       ((MD-2)) │ APACHE │     │lighttp │ ((MD-3))  
+                                       ((MD-2)) │ APACHE │     │ TOMCAT │ ((MD-3))  
                                 ┌─────────┐     └───┬────┘     └───┬────┘ 
-                       ((MD-1)) │ OpenSSH │         │ pt. 80       │ pt. 7664
+                       ((MD-1)) │ OpenSSH │         │ pt. 80       │ pt. 50000
                                 └────┬────┘         └──────┬───────┘
                                      │ pt. 22              │ 
                                 ┌────▼────┐           ┌────▼────┐               
